@@ -64,7 +64,8 @@ function CreateAccount() {
           ) : (
             <>
               <h5>Success</h5>
-              <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
+              {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
+              <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another account</Button>
             </>
           )}
         </Card.Body>

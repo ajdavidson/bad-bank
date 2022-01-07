@@ -9,7 +9,7 @@ function Withdraw() {
 
   function validate(field, label) {
     if (isNaN(field) || field < 1) {
-      setStatus('Error: ' + label);
+      setStatus(label);
       setTimeout(() => setStatus(''), 3000);
       return false;
     }
@@ -75,7 +75,8 @@ function Withdraw() {
           ) : (
             <>
               <h5>Success</h5>
-              <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Withdrawal</button>
+              {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Withdrawal</button> */}
+              <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another Withdrawal</Button>
             </>
           )}
         </Card.Body>

@@ -70,8 +70,9 @@ function Deposit() {
             </>
           ) : (
             <>
-              <h5>Success</h5>
-              <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Deposit</button>
+              <h5><i class="fas fa-check-circle" style={{ color: 'green' }}></i> Success</h5>
+              {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Deposit</button> */}
+              <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another Deposit</Button>
             </>
           )}
         </Card.Body>
