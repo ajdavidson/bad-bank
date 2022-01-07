@@ -49,17 +49,23 @@ function Withdraw() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header><b>Withdraw</b></Card.Header>
+        <Card.Header><i class="fas fa-balance-scale-right"></i> <b>Withdraw</b></Card.Header>
         <Card.Body>
           <Card.Title>
             &nbsp;
             {status !== '' && <i class="fas fa-exclamation-triangle" style={{ color: 'red' }}></i>} {status}
+
           </Card.Title>
-          <Card.Subtitle>Current Balance: ${JSON.stringify(ctx.users[0].balance)}</Card.Subtitle>
+          <Card.Subtitle><br /><h5><i class="fas fa-balance-scale"></i> Balance: ${JSON.stringify(ctx.users[0].balance)}</h5></Card.Subtitle>
           {show ? (
             <>
-              $<br />
-              <input type="input" className="form-control" id="withdrawAmt" placeholder="Enter deposit amount" value={withdrawAmt} onChange={e => setWithdrawAmt(e.currentTarget.value)} /><br />
+              <br />
+              {/* <input type="input" className="form-control" id="withdrawAmt" placeholder="Enter deposit amount" value={withdrawAmt} onChange={e => setWithdrawAmt(e.currentTarget.value)} /><br /> */}
+              <InputGroup className="mb-3">
+                <InputGroup.Text>$</InputGroup.Text>
+                <FormControl aria-label="Amount (to the nearest dollar)" id="withdrawAmt" placeholder="Enter deposit amount" value={withdrawAmt} onChange={e => setWithdrawAmt(e.currentTarget.value)} />
+                <InputGroup.Text>.00</InputGroup.Text>
+              </InputGroup>
               {/* Email address<br />
               <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br />
               Password<br />

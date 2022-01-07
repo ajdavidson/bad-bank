@@ -3,7 +3,7 @@ function AllData() {
   return (
     <>
       <Card>
-        <Card.Header><b>All Data</b></Card.Header>
+        <Card.Header><i class="fas fa-database"></i> <b>All Data</b></Card.Header>
         <Card.Body>
           <Card.Title>Users</Card.Title>
           {/* <h5>All Data in Store</h5>
