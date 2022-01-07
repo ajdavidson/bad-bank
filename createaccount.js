@@ -8,7 +8,7 @@ function CreateAccount() {
 
   function validate(field, label) {
     if (!field) {
-      setStatus('Error: ' + label);
+      setStatus(label);
       setTimeout(() => setStatus(''), 5000);
       return false;
     }
@@ -22,7 +22,7 @@ function CreateAccount() {
     if (!validate(password, 'Enter a password')) return;
     if (password.length < 8) {
       setStatus('Error: password needs 8 characters min');
-      setTimeout(() => setStatus(''), 5000);
+      setTimeout(() => setStatus(''), 3000);
       return;
     }
     ctx.users.push({ name, email, password, balance: 100 });
@@ -39,9 +39,12 @@ function CreateAccount() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header>Create Account</Card.Header>
+        <Card.Header><b>Create Account</b></Card.Header>
         <Card.Body>
-          <Card.Title>&nbsp;{status}</Card.Title>
+          <Card.Title>
+            &nbsp;
+            {status !== '' && <i class="fas fa-exclamation-triangle" style={{ color: 'red' }}></i>} {status}
+          </Card.Title>
           {show ? (
             <>
               Name<br />
@@ -52,9 +55,10 @@ function CreateAccount() {
               <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br />
 
               {name !== '' || email !== '' || password !== '' ? (
-                <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+                // <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+                <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Create Account</Button>
               ) : (
-                <button type="submit" className="btn btn-warning" disabled>Fill in Form Info</button>
+                <Button type="submit" variant="light" disabled>Fill in Form Info</Button>
               )}
             </>
           ) : (

@@ -4,7 +4,7 @@ function Home() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header>Bad Bank Online Application</Card.Header>
+        <Card.Header><b>Bad Bank Online Application</b></Card.Header>
         <Card.Body>
           <Card.Title>Welcome to Bad Bank</Card.Title>
           {/* <img src="bank.png" className="img-fluid" alt="Responsive image" /> */}

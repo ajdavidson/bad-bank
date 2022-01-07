@@ -10,12 +10,12 @@ function Withdraw() {
   function validate(field, label) {
     if (isNaN(field) || field < 1) {
       setStatus('Error: ' + label);
-      setTimeout(() => setStatus(''), 5000);
+      setTimeout(() => setStatus(''), 3000);
       return false;
     }
     if (field > ctx.users[0].balance) {
       setStatus('Error: Amount exceeds balance');
-      setTimeout(() => setStatus(''), 5000);
+      setTimeout(() => setStatus(''), 3000);
       return false;
     }
     return true;
@@ -49,9 +49,12 @@ function Withdraw() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header>Withdraw</Card.Header>
+        <Card.Header><b>Withdraw</b></Card.Header>
         <Card.Body>
-          <Card.Title>&nbsp;{status}</Card.Title>
+          <Card.Title>
+            &nbsp;
+            {status !== '' && <i class="fas fa-exclamation-triangle" style={{ color: 'red' }}></i>} {status}
+          </Card.Title>
           <Card.Subtitle>Current Balance: ${JSON.stringify(ctx.users[0].balance)}</Card.Subtitle>
           {show ? (
             <>
@@ -63,9 +66,10 @@ function Withdraw() {
               <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
 
               {withdrawAmt !== 0 && withdrawAmt !== '' ? (
-                <button type="submit" className="btn btn-light" onClick={handleCreate}>Submit Withdrawal</button>
+                // <button type="submit" className="btn btn-light" onClick={handleCreate}>Submit Withdrawal</button>
+                <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Submit Withdawal</Button>
               ) : (
-                <button type="submit" className="btn btn-warning" disabled>Fill in Amount</button>
+                <Button type="submit" variant="light" disabled>Fill in Amount</Button>
               )}
             </>
           ) : (

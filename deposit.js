@@ -9,8 +9,8 @@ function Deposit() {
 
   function validate(field, label) {
     if (isNaN(field) || field < 1) {
-      setStatus('Error: ' + label);
-      setTimeout(() => setStatus(''), 5000);
+      setStatus(label);
+      setTimeout(() => setStatus(''), 3000);
       return false;
     }
     return true;
@@ -44,9 +44,12 @@ function Deposit() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header>Deposit</Card.Header>
+        <Card.Header><b>Deposit</b></Card.Header>
         <Card.Body>
-          <Card.Title>&nbsp;{status}</Card.Title>
+          <Card.Title>
+            &nbsp;
+            {status !== '' && <i class="fas fa-exclamation-triangle" style={{ color: 'red' }}></i>} {status}
+          </Card.Title>
           <Card.Subtitle>Current Balance: ${JSON.stringify(ctx.users[0].balance)}</Card.Subtitle>
           {show ? (
             <>
@@ -58,9 +61,11 @@ function Deposit() {
               <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
 
               {depositAmt !== 0 && depositAmt !== '' ? (
-                <button type="submit" className="btn btn-light" onClick={handleCreate}>Submit Deposit</button>
+                // <button type="submit" className="btn btn-light" onClick={handleCreate}>Submit Deposit</button>
+                <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Submit Deposit</Button>
               ) : (
-                <button type="submit" className="btn btn-warning" disabled>Fill in Amount</button>
+                // <button type="submit" className="btn btn-warning" disabled>Fill in Amount</button>
+                <Button type="submit" variant="light" disabled>Fill in Amount</Button>
               )}
             </>
           ) : (

@@ -21,7 +21,7 @@ const {
 function NavBar() {
   return (
     <>
-      <Navbar variant="light" expand="lg">
+      <Navbar bg="light" variant="light" expand="lg" style={{ marginBottom: '0', paddingBottom: '0' }}>
         <Container>
           <Navbar.Brand><i class="fas fa-university"></i> Bad Bank</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
