@@ -74,7 +74,7 @@ function Withdraw() {
             </>
           ) : (
             <>
-              <h5>Success</h5>
+              <h5><i class="fas fa-check-circle" style={{ color: 'green' }}></i> Success</h5>
               {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Withdrawal</button> */}
               <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another Withdrawal</Button>
             </>
