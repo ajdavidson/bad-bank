@@ -2,9 +2,6 @@ function Deposit() {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState('');
   const [depositAmt, setDepositAmt] = React.useState(0);
-  //const [name, setName] = React.useState('');
-  //const [email, setEmail] = React.useState('');
-  //const [password, setPassword] = React.useState('');
   const ctx = React.useContext(UserContext);
 
   function validate(field, label) {
@@ -19,24 +16,19 @@ function Deposit() {
   function handleCreate() {
     console.log(depositAmt);
     if (!validate(depositAmt, 'Enter a Number greater than Zero')) return;
-    // if (!validate(email, 'Enter an email')) return;
-    // if (!validate(password, 'Enter a password')) return;
-    // if (password.length < 8) {
-    //   setStatus('Error: password needs 8 characters min');
-    //   setTimeout(() => setStatus(''), 5000);
-    //   return;
-    // }
 
-    //ctx.users.push({ name, email, password, balance: 100 });
+    const newBalance = Number(ctx.users[0].balance) + Number(Math.trunc(depositAmt));
+    var dtm = new Date();
+    //const dtm = d.getDate();
+    // dtm.toString();
 
-    ctx.users[0].balance = Number(ctx.users[0].balance) + Number(Math.trunc(depositAmt));
+    ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Deposit', datetime: dtm.toString(), amount: Number(Math.trunc(depositAmt)), balance: newBalance });
+
+    ctx.users[0].balance = newBalance;
     setShow(false);
   }
 
   function clearForm() {
-    //setName('');
-    //setEmail('');
-    //setPassword('');
     setDepositAmt(0);
     setShow(true);
   }

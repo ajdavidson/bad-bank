@@ -23,7 +23,7 @@ function NavBar() {
     <>
       <Navbar bg="light" variant="light" expand="lg" style={{ marginBottom: '0', paddingBottom: '0' }}>
         <Container>
-          <Navbar.Brand><i class="fas fa-university"></i> Bad Bank</Navbar.Brand>
+          <Navbar.Brand><i class="fas fa-globe" style={{ color: "green" }}></i> Globalin Bank</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" fill variant="tabs" defaultActiveKey="#/">
@@ -32,7 +32,7 @@ function NavBar() {
                 placement='bottom'
                 overlay={
                   <Tooltip>
-                    Bad Bank Online Application Welcome Page
+                    Globalin Bank Online Application Welcome Page
                   </Tooltip>
                 }
               >
@@ -43,7 +43,7 @@ function NavBar() {
                 placement='bottom'
                 overlay={
                   <Tooltip>
-                    Form to Create a new Account with Bad Bank
+                    Form to Create a new Account with Globalin Bank
                   </Tooltip>
                 }
               >
@@ -87,7 +87,7 @@ function NavBar() {
                 placement='bottom'
                 overlay={
                   <Tooltip>
-                    View a history of your transactions
+                    View user data and  history of transactions
                   </Tooltip>
                 }
               >

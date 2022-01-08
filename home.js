@@ -4,11 +4,11 @@ function Home() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header><i class="fas fa-home"></i> <b>Bad Bank Online Application</b></Card.Header>
+        <Card.Header><i class="fas fa-globe"></i> <b>Globalin Bank Online Application</b></Card.Header>
         <Card.Body>
-          <Card.Title>Welcome to Bad Bank</Card.Title>
+          <Card.Title>Welcome to Globalin Bank</Card.Title>
           {/* <img src="bank.png" className="img-fluid" alt="Responsive image" /> */}
-          <div style={{ fontSize: '36px' }}><i class="fas fa-university fa-10x"></i></div>
+          <div style={{ fontSize: '38px' }}><i class="fas fa-globe fa-10x" style={{ color: "green" }}></i></div>
           <Card.Text>
             You can move around using the navigation bar.
           </Card.Text>

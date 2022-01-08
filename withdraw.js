@@ -33,8 +33,14 @@ function Withdraw() {
     // }
 
     //ctx.users.push({ name, email, password, balance: 100 });
+    const newBalance = Number(ctx.users[0].balance) - Number(Math.trunc(withdrawAmt));
+    var dtm = new Date();
+    //const dtm = d.getDate();
+    // dtm.toString();
 
-    ctx.users[0].balance = Number(ctx.users[0].balance) - Number(Math.trunc(withdrawAmt));
+    ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Withdrawal', datetime: dtm.toString(), amount: Number(Math.trunc(withdrawAmt)), balance: newBalance });
+
+    ctx.users[0].balance = newBalance;
     setShow(false);
   }
 
