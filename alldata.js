@@ -3,17 +3,16 @@ function AllData() {
   return (
     <>
       <Card>
-        <Card.Header><i class="fas fa-database"></i> <b>All Data</b></Card.Header>
+        <Card.Header><i className="fas fa-database"/> <b>All Data</b></Card.Header>
         <Card.Body>
-          <Card.Title><h3><i class="far fa-user-circle"></i> Profile</h3></Card.Title>
-          <br></br>
+          <Card.Title><h3><i className="far fa-user-circle"/> Profile</h3></Card.Title>
+          <br/>
           {console.log(ctx.users)}
-          <h5>Curennt User</h5>
-          <table id="books" class="display table table-striped" style={{ width: "100%" }}>
-            {/*<caption>Result Table for Keyword: {query} </caption>*/}
 
+          {/* */}
+          <h5><i className="fas fa-user"/> Curent User</h5>
+          <table id="books" className="display table table-striped" style={{ width: "100%" }}>
             <thead>
-
               <tr>
                 <th>Level</th>
                 <th>Name</th>
@@ -24,7 +23,7 @@ function AllData() {
             </thead>
             <tbody>
 
-              <tr style={{ fontWeight: 'bold', color: 'green' }}>
+              <tr className='c-user' style={{ fontWeight: 'bold' }}>
                 <td>{ctx.users[0].level}</td>
                 <td>{ctx.users[0].name}</td>
                 <td>{ctx.users[0].email}</td>
@@ -34,9 +33,11 @@ function AllData() {
 
             </tbody>
           </table>
+
           {/*  */}
-          <h5>Transactions</h5>
-          <table id="books" class="display table table-striped" style={{ width: "100%" }}>
+          <br/>
+          <h5><i className="far fa-chart-bar"/> Transactions</h5>
+          <table id="books" className="display table table-striped" style={{ width: "100%" }}>
             <thead>
               <tr>
                 <th>User ID</th>
@@ -58,12 +59,12 @@ function AllData() {
               )).reverse()}
             </tbody>
           </table>
-          <h5>All Users</h5>
-          <table id="books" class="display table table-striped" style={{ width: "100%" }}>
-            {/*<caption>Result Table for Keyword: {query} </caption>*/}
 
+          {/* */}
+          <br/>
+          <h5><i className="fas fa-users"/> All Users</h5>
+          <table id="books" className="display table table-striped" style={{ width: "100%" }}>
             <thead>
-
               <tr>
                 <th>Level</th>
                 <th>Name</th>

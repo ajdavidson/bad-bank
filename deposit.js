@@ -22,7 +22,7 @@ function Deposit() {
     //const dtm = d.getDate();
     // dtm.toString();
 
-    ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Deposit', datetime: dtm.toString(), amount: Number(Math.trunc(depositAmt)), balance: newBalance });
+    ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Deposit', datetime: dtm.toUTCString(), amount: Number(Math.trunc(depositAmt)), balance: newBalance });
 
     ctx.users[0].balance = newBalance;
     setShow(false);

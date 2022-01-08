@@ -38,7 +38,7 @@ function Withdraw() {
     //const dtm = d.getDate();
     // dtm.toString();
 
-    ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Withdrawal', datetime: dtm.toString(), amount: Number(Math.trunc(withdrawAmt)), balance: newBalance });
+    ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Withdrawal', datetime: dtm.toUTCString(), amount: Number(Math.trunc(withdrawAmt)), balance: newBalance });
 
     ctx.users[0].balance = newBalance;
     setShow(false);
