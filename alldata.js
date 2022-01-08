@@ -10,8 +10,8 @@ function AllData() {
           {console.log(ctx.users)}
 
           {/* */}
-          <h5><i className="fas fa-user"/> Curent User</h5>
-          <table id="books" className="display table table-striped" style={{ width: "100%" }}>
+          <h5><i className="fas fa-user"/> Account</h5>
+          <table id="all-data" className="display table table-striped" >
             <thead>
               <tr>
                 <th>Level</th>
@@ -36,7 +36,7 @@ function AllData() {
 
           {/*  */}
           <br/>
-          <h5><i className="far fa-chart-bar"/> Transactions</h5>
+          <h5><i className="fas fa-chart-bar"/> Transactions</h5>
           <table id="books" className="display table table-striped" style={{ width: "100%" }}>
             <thead>
               <tr>

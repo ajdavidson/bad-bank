@@ -4,13 +4,13 @@ function Home() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header><i class="fas fa-globe"></i> <b>Globalin Bank Online Application</b></Card.Header>
-        <Card.Body>
-          <Card.Title>Welcome to Globalin Bank</Card.Title>
+        <Card.Header><i class="fas fa-globe"/> <b>Globalin Bank Online Application</b></Card.Header>
+        <Card.Body style={{textAlign:'center'}}>
+          <Card.Title>Hello, {ctx.users[0].name} {ctx.users[0].level === 'Admin' && '( Admin )'}</Card.Title>
           {/* <img src="bank.png" className="img-fluid" alt="Responsive image" /> */}
-          <div style={{ fontSize: '38px' }}><i class="fas fa-globe fa-10x" style={{ color: "green" }}></i></div>
-          <Card.Text>
-            You can move around using the navigation bar.
+          <div style={{ fontSize: '38px' }}><i class="fas fa-globe fa-10x" style={{color: "green"}}/></div>
+          <Card.Text >
+            We have the formula for your finances
           </Card.Text>
         </Card.Body>
       </Card>
