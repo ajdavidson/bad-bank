@@ -24,12 +24,12 @@ function AllData() {
             </thead>
             <tbody>
 
-              <tr>
+              <tr style={{ fontWeight: 'bold', color: 'green' }}>
                 <td>{ctx.users[0].level}</td>
                 <td>{ctx.users[0].name}</td>
                 <td>{ctx.users[0].email}</td>
                 <td>{ctx.users[0].password}</td>
-                <td>{ctx.users[0].balance}</td>
+                <td>${ctx.users[0].balance}</td>
               </tr>
 
             </tbody>
@@ -52,8 +52,8 @@ function AllData() {
                   <td>{t.userID}</td>
                   <td>{t.type}</td>
                   <td>{t.datetime}</td>
-                  <td>{t.amount}</td>
-                  <td>{t.balance}</td>
+                  <td>${t.amount}</td>
+                  <td>${t.balance}</td>
                 </tr>
               )).reverse()}
             </tbody>
@@ -79,7 +79,7 @@ function AllData() {
                   <td>{t.name}</td>
                   <td>{t.email}</td>
                   <td>{t.password}</td>
-                  <td>{t.balance}</td>
+                  <td>${t.balance}</td>
                 </tr>
               ))}
             </tbody>

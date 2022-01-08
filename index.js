@@ -4,7 +4,7 @@ function Spa() {
       <NavBar />
       {/* <UserContext.Provider value={{ users: [{ name: 'Norman Osborn', email: 'norman.osborn@oscorp.io', password: '12345678', balance: 1337 }] }}> */}
       <UserContext.Provider value={{
-        users: [{ level: 'Admin', name: 'Norman Osborn', email: 'norman.osborn@oscorp.io', password: '12345678', balance: 1337 }],
+        users: [{ level: 'Admin', name: 'Norman Osborn', email: 'norman.osborn@oscorp.io', password: 'M3ph1$t0', balance: 1337 }],
         xaction: [{ userID: 'norman.osborn@oscorp.io', type: 'Deposit', datetime: 'Sat Jan 01 2022 23:39:58 GMT-0700 (Mountain Standard Time)', amount: 100, balance: 1337 }]
       }
       }>
