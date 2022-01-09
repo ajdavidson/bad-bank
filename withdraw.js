@@ -2,9 +2,6 @@ function Withdraw() {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState('');
   const [withdrawAmt, setWithdrawAmt] = React.useState(0);
-  //const [name, setName] = React.useState('');
-  //const [email, setEmail] = React.useState('');
-  //const [password, setPassword] = React.useState('');
   const ctx = React.useContext(UserContext);
 
   function validate(field, label) {
@@ -24,19 +21,9 @@ function Withdraw() {
   function handleCreate() {
     console.log(withdrawAmt);
     if (!validate(withdrawAmt, 'Enter a Number greater than Zero')) return;
-    // if (!validate(email, 'Enter an email')) return;
-    // if (!validate(password, 'Enter a password')) return;
-    // if (password.length < 8) {
-    //   setStatus('Error: password needs 8 characters min');
-    //   setTimeout(() => setStatus(''), 5000);
-    //   return;
-    // }
 
-    //ctx.users.push({ name, email, password, balance: 100 });
     const newBalance = Number(ctx.users[0].balance) - Number(Math.trunc(withdrawAmt));
     var dtm = new Date();
-    //const dtm = d.getDate();
-    // dtm.toString();
 
     ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Withdrawal', datetime: dtm.toUTCString(), amount: Number(Math.trunc(withdrawAmt)), balance: newBalance });
 
@@ -45,9 +32,6 @@ function Withdraw() {
   }
 
   function clearForm() {
-    //setName('');
-    //setEmail('');
-    //setPassword('');
     setWithdrawAmt(0);
     setShow(true);
   }
@@ -55,14 +39,14 @@ function Withdraw() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header><i class="fas fa-balance-scale-right"></i> <b>Withdraw</b></Card.Header>
+        <Card.Header><i class="fas fa-balance-scale-right"/> <b>Withdraw</b></Card.Header>
         <Card.Body>
           <Card.Title>
             &nbsp;
-            {status !== '' && <i class="fas fa-exclamation-triangle" style={{ color: 'red' }}></i>} {status}
+            {status !== '' && <i class="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
 
           </Card.Title>
-          <Card.Subtitle><br /><h5><i class="fas fa-balance-scale"></i> Balance: ${JSON.stringify(ctx.users[0].balance)}</h5></Card.Subtitle>
+          <Card.Subtitle><br /><h5><i class="fas fa-balance-scale"/> Balance: ${JSON.stringify(ctx.users[0].balance)}</h5></Card.Subtitle>
           {show ? (
             <>
               <br />
@@ -79,14 +63,14 @@ function Withdraw() {
 
               {withdrawAmt !== 0 && withdrawAmt !== '' ? (
                 // <button type="submit" className="btn btn-light" onClick={handleCreate}>Submit Withdrawal</button>
-                <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Submit Withdawal</Button>
+                <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Submit Withdrawal</Button>
               ) : (
                 <Button type="submit" variant="light" disabled>Fill in Amount</Button>
               )}
             </>
           ) : (
             <>
-              <h5><i class="fas fa-check-circle" style={{ color: 'green' }}></i> Success</h5>
+              <h5><i class="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
               {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Withdrawal</button> */}
               <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another Withdrawal</Button>
             </>

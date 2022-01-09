@@ -19,8 +19,6 @@ function Deposit() {
 
     const newBalance = Number(ctx.users[0].balance) + Number(Math.trunc(depositAmt));
     var dtm = new Date();
-    //const dtm = d.getDate();
-    // dtm.toString();
 
     ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Deposit', datetime: dtm.toUTCString(), amount: Number(Math.trunc(depositAmt)), balance: newBalance });
 
@@ -36,13 +34,13 @@ function Deposit() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header><i class="fas fa-balance-scale-left"></i> <b>Deposit</b></Card.Header>
+        <Card.Header><i class="fas fa-balance-scale-left"/> <b>Deposit</b></Card.Header>
         <Card.Body>
           <Card.Title>
             &nbsp;
-            {status !== '' && <i class="fas fa-exclamation-triangle" style={{ color: 'red' }}></i>} {status}
+            {status !== '' && <i class="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
           </Card.Title>
-          <Card.Subtitle><br /><h5><i class="fas fa-balance-scale"></i> Balance: ${JSON.stringify(ctx.users[0].balance)}</h5></Card.Subtitle>
+          <Card.Subtitle><br /><h5><i class="fas fa-balance-scale"/> Balance: ${JSON.stringify(ctx.users[0].balance)}</h5></Card.Subtitle>
           {show ? (
             <>
               <br />
@@ -67,7 +65,7 @@ function Deposit() {
             </>
           ) : (
             <>
-              <h5><i class="fas fa-check-circle" style={{ color: 'green' }}></i> Success</h5>
+              <h5><i class="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
               {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Deposit</button> */}
               <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another Deposit</Button>
             </>

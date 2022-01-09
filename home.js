@@ -4,7 +4,7 @@ function Home() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header><i class="fas fa-globe"/> <b>Globalin Bank Online Application</b></Card.Header>
+        <Card.Header><i className="fas fa-home"/> <b>Globalin Bank Online Application</b></Card.Header>
         <Card.Body style={{textAlign:'center'}}>
           <Card.Title>Hello, {ctx.users[0].name} {ctx.users[0].level === 'Admin' && '( Admin )'}</Card.Title>
           {/* <img src="bank.png" className="img-fluid" alt="Responsive image" /> */}

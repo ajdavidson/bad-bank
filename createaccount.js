@@ -39,11 +39,11 @@ function CreateAccount() {
   return (
     <React.Fragment>
       <Card style={{ width: '400px' }}>
-        <Card.Header><i class="fas fa-id-card"></i> <b>Create Account</b></Card.Header>
+        <Card.Header><i class="fas fa-id-card"/> <b>Create Account</b></Card.Header>
         <Card.Body>
           <Card.Title>
             &nbsp;
-            {status !== '' && <i class="fas fa-exclamation-triangle" style={{ color: 'red' }}></i>} {status}
+            {status !== '' && <i class="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
           </Card.Title>
           {show ? (
             <>
@@ -51,7 +51,7 @@ function CreateAccount() {
               Name<br />
               {/* <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br /> */}
               <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1"><i class="fas fa-user"></i></InputGroup.Text>
+                <InputGroup.Text id="basic-addon1"><i class="fas fa-user"/></InputGroup.Text>
                 <FormControl
                   type="input" className="form-control" id="name" placeholder="Enter your name" value={name} onChange={e => setName(e.currentTarget.value)}
                 />
@@ -60,7 +60,7 @@ function CreateAccount() {
               Email address<br />
               {/* <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br /> */}
               <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1"><i class="fas fa-envelope"></i></InputGroup.Text>
+                <InputGroup.Text id="basic-addon1"><i class="fas fa-envelope"/></InputGroup.Text>
                 <FormControl
                   type="email" className="form-control" id="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.currentTarget.value)}
                 />
@@ -69,7 +69,7 @@ function CreateAccount() {
               Password<br />
               {/* <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
               <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1"><i class="fas fa-key"></i></InputGroup.Text>
+                <InputGroup.Text id="basic-addon1"><i class="fas fa-key"/></InputGroup.Text>
                 <FormControl
                   type="password" id="password" placeholder="Enter a password" value={password} onChange={e => setPassword(e.currentTarget.value)}
                 />
@@ -84,7 +84,7 @@ function CreateAccount() {
             </>
           ) : (
             <>
-              <h5><i class="fas fa-check-circle" style={{ color: 'green' }}></i> Success</h5>
+              <h5><i class="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
               {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
               <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another account</Button>
             </>
