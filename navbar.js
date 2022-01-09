@@ -21,7 +21,7 @@ const {
 function NavBar() {
   return (
     <>
-      <Navbar bg="light" variant="light" expand="lg" style={{ marginBottom: '0', paddingBottom: '0' }}>
+      <Navbar bg="light" variant="light" expand="lg" style={{ marginBottom: '0', paddingBottom: '0' }} sticky="top">
         <Container>
           <Navbar.Brand><i class="fas fa-globe" style={{color: "green"}}/> <b>Globalin Bank</b></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
