@@ -49,7 +49,7 @@ function Deposit() {
               {/* <input type="input" className="form-control" id="depositAmt" placeholder="Enter deposit amount" value={depositAmt} onChange={e => setDepositAmt(e.currentTarget.value)} /><br /> */}
               <InputGroup className="mb-3">
                 <InputGroup.Text>$</InputGroup.Text>
-                <FormControl aria-label="Amount (to the nearest dollar)" id="depositAmt" placeholder="Enter deposit amount" value={depositAmt} onChange={e => setDepositAmt(e.currentTarget.value)} />
+                <FormControl aria-label="Amount (to the nearest dollar)" id="depositAmt" placeholder="Enter a number greater than zero"  onChange={e => setDepositAmt(e.currentTarget.value)} />
                 <InputGroup.Text>.00</InputGroup.Text>
               </InputGroup>
               {/* Email address<br />

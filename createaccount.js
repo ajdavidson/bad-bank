@@ -53,7 +53,7 @@ function CreateAccount() {
               <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1"><i class="fas fa-user"></i></InputGroup.Text>
                 <FormControl
-                  type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)}
+                  type="input" className="form-control" id="name" placeholder="Enter your name" value={name} onChange={e => setName(e.currentTarget.value)}
                 />
               </InputGroup>
               {/*  */}
@@ -62,7 +62,7 @@ function CreateAccount() {
               <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1"><i class="fas fa-envelope"></i></InputGroup.Text>
                 <FormControl
-                  type="email" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}
+                  type="email" className="form-control" id="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.currentTarget.value)}
                 />
               </InputGroup>
               {/*  */}
@@ -71,7 +71,7 @@ function CreateAccount() {
               <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1"><i class="fas fa-key"></i></InputGroup.Text>
                 <FormControl
-                  type="password" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}
+                  type="password" id="password" placeholder="Enter a password" value={password} onChange={e => setPassword(e.currentTarget.value)}
                 />
               </InputGroup>
 

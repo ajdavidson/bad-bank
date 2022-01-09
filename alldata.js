@@ -11,7 +11,7 @@ function AllData() {
 
           {/* */}
           <h5><i className="fas fa-user"/> Account</h5>
-          <table id="all-data" className="display table table-striped" >
+          <Table striped hover>
             <thead>
               <tr>
                 <th>Level</th>
@@ -32,17 +32,17 @@ function AllData() {
               </tr>
 
             </tbody>
-          </table>
+          </Table>
 
           {/*  */}
           <br/>
           <h5><i className="fas fa-chart-bar"/> Transactions</h5>
-          <table id="books" className="display table table-striped" style={{ width: "100%" }}>
+          <Table striped hover>
             <thead>
               <tr>
                 <th>User ID</th>
                 <th>Type</th>
-                <th>Date/Time</th>
+                <th>Date / Time</th>
                 <th>Amount</th>
                 <th>Balance</th>
               </tr>
@@ -58,12 +58,12 @@ function AllData() {
                 </tr>
               )).reverse()}
             </tbody>
-          </table>
+          </Table>
 
           {/* */}
           <br/>
           <h5><i className="fas fa-users"/> All Users</h5>
-          <table id="books" className="display table table-striped" style={{ width: "100%" }}>
+          <Table striped hover>
             <thead>
               <tr>
                 <th>Level</th>
@@ -84,7 +84,7 @@ function AllData() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </Table>
         </Card.Body>
       </Card>
 

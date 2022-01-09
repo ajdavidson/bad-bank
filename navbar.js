@@ -15,7 +15,8 @@ const {
   NavDropdown,
   Nav,
   OverlayTrigger,
-  Tooltip
+  Tooltip,
+  Table
 } = ReactBootstrap;
 
 function NavBar() {

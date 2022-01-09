@@ -69,7 +69,7 @@ function Withdraw() {
               {/* <input type="input" className="form-control" id="withdrawAmt" placeholder="Enter deposit amount" value={withdrawAmt} onChange={e => setWithdrawAmt(e.currentTarget.value)} /><br /> */}
               <InputGroup className="mb-3">
                 <InputGroup.Text>$</InputGroup.Text>
-                <FormControl aria-label="Amount (to the nearest dollar)" id="withdrawAmt" placeholder="Enter deposit amount" value={withdrawAmt} onChange={e => setWithdrawAmt(e.currentTarget.value)} />
+                <FormControl aria-label="Amount (to the nearest dollar)" id="withdrawAmt" placeholder="Enter a number greater than zero" onChange={e => setWithdrawAmt(e.currentTarget.value)} />
                 <InputGroup.Text>.00</InputGroup.Text>
               </InputGroup>
               {/* Email address<br />
