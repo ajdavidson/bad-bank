@@ -9,7 +9,7 @@ function CreateAccount() {
   function validate(field, label) {
     if (!field) {
       setStatus(label);
-      setTimeout(() => setStatus(''), 5000);
+      setTimeout(() => setStatus(''), 3000);
       return false;
     }
     return true;
@@ -18,10 +18,20 @@ function CreateAccount() {
   function handleCreate() {
     console.log(name, email, password);
     if (!validate(name, 'Enter a name')) return;
+
     if (!validate(email, 'Enter an email')) return;
+
+    const resEmail = ctx.users.filter(p => p.email == email)
+    console.log(resEmail)
+    if(resEmail.length !== 0){
+      setStatus("Email already in use");
+      setTimeout(() => setStatus(''), 3000);
+      return;
+    }
+
     if (!validate(password, 'Enter a password')) return;
     if (password.length < 8) {
-      setStatus('password needs 8 characters min');
+      setStatus('Password needs 8 characters min');
       setTimeout(() => setStatus(''), 3000);
       return;
     }

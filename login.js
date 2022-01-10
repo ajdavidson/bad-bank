@@ -19,7 +19,7 @@ function Login() {
   function validate(field, label) {
     if (!field) {
       setStatus(label);
-      setTimeout(() => setStatus(''), 5000);
+      setTimeout(() => setStatus(''), 3000);
       return false;
     }
     return true;
@@ -43,26 +43,16 @@ function Login() {
    //    setTimeout(() => setStatus(''), 3000);
    //    return;
    //  }
-    if(resEmail.length !== 0){
-      alert("Value exists!")
-      setStatus("Match");
-      setTimeout(() => setStatus(''), 5000);
-
-    } else{
-      alert("Value does not exists!")
+    if(resEmail.length === 0){
+     //alert("Value does not exists!")
       setStatus("No Email Match");
-      setTimeout(() => setStatus(''), 5000);
+      setTimeout(() => setStatus(''), 3000);
       return false;
     }
-    if(resPwd.length !== 0){
-      alert("Value exists!")
-      setStatus("Match");
-      setTimeout(() => setStatus(''), 5000);
-
-    } else{
-      alert("Value does not exists!")
+    if(resPwd.length === 0){
+      //alert("Value does not exists!")
       setStatus("No Password Match");
-      setTimeout(() => setStatus(''), 5000);
+      setTimeout(() => setStatus(''), 3000);
       return;
     }
     //ctx.users.push({ level: 'Standard User', name, email, password, balance: 100 });
@@ -119,7 +109,7 @@ function Login() {
             <>
               <h5><i className="fas fa-user-check"/> Logged In as {ctx.loggedIn[0].name}</h5>
               {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
-              <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another account</Button>
+              <Button type="submit" variant="outline-secondary" onClick={clearForm}>Continue</Button>
             </>
           )}
         </Card.Body>

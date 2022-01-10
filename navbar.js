@@ -20,7 +20,6 @@ const {
 } = ReactBootstrap;
 
 function NavBar() {
-  // const ctx = React.useContext(UserContext);
   return (
     <>
       <Navbar bg="light" variant="light" expand="lg" style={{ marginBottom: '0', paddingBottom: '0' }} sticky="top">

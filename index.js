@@ -38,22 +38,28 @@ function Spa() {
           {
             userID: 'norman.osborn@oscorp.io',
             type: 'Deposit',
-            datetime: 'Sat, Jan 02 2022 14:41:02 GMT',
+            datetime: 'Sun, Jan 02 2022 14:41:02 GMT',
             amount: 237,
             balance: 13337
           },
           {
             userID: 'norman.osborn@oscorp.io',
             type: 'Withdrawal',
-            datetime: 'Sat, Jan 03 2022 23:39:58 GMT',
+            datetime: 'Mon, Jan 03 2022 23:39:58 GMT',
             amount: 10000,
             balance: 1337
           },
-
           {
             userID: 'richard.parker@oscorp.io',
             type: 'Deposit',
             datetime: 'Sat, Jan 01 2022 13:19:52 GMT',
+            amount: 220,
+            balance: 1337
+          },
+          {
+            userID: 'richard.parker@oscorp.io',
+            type: 'Deposit',
+            datetime: 'Mon, Jan 03 2022 03:19:52 GMT',
             amount: 220,
             balance: 1337
           },
@@ -67,14 +73,14 @@ function Spa() {
           {
             userID: 'harry.osborn@oscorp.io',
             type: 'Deposit',
-            datetime: 'Sat, Jan 02 2022 14:41:02 GMT',
+            datetime: 'Sun, Jan 02 2022 14:41:02 GMT',
             amount: 237,
             balance: 1237
           },
           {
             userID: 'harry.osborn@oscorp.io',
             type: 'Deposit',
-            datetime: 'Sat, Jan 03 2022 11:11:12 GMT',
+            datetime: 'Mon, Jan 03 2022 11:11:12 GMT',
             amount: 100,
             balance: 1337
           }
@@ -99,6 +105,7 @@ function Spa() {
         </div>
       </UserContext.Provider>
     </HashRouter>
+
   );
 }
 
