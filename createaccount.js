@@ -55,6 +55,8 @@ function CreateAccount() {
             &nbsp;
             {status !== '' && <i class="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
           </Card.Title>
+          {ctx.loggedIn[0].level === 'Admin' ? (
+            <>
           {show ? (
             <>
               {/*  */}
@@ -99,6 +101,12 @@ function CreateAccount() {
               <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another account</Button>
             </>
           )}
+            </>
+            ):(
+            <>
+              <h5><i className="fas fa-user-lock"/> Must be an  Administrator</h5>
+            </>
+            )}
         </Card.Body>
       </Card>
     </React.Fragment>
