@@ -20,6 +20,7 @@ const {
 } = ReactBootstrap;
 
 function NavBar() {
+  // const ctx = React.useContext(UserContext);
   return (
     <>
       <Navbar bg="light" variant="light" expand="lg" style={{ marginBottom: '0', paddingBottom: '0' }} sticky="top">
@@ -94,6 +95,8 @@ function NavBar() {
               >
                 <Nav.Link href="#/alldata/">All Data</Nav.Link>
               </OverlayTrigger>
+              <Nav.Link href="#/login/">Login</Nav.Link>
+
             </Nav>
           </Navbar.Collapse>
         </Container>

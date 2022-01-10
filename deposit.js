@@ -20,7 +20,7 @@ function Deposit() {
     const newBalance = Number(ctx.users[0].balance) + Number(Math.trunc(depositAmt));
     var dtm = new Date();
 
-    ctx.xaction.push({ userID: 'norman.osborn@oscorp.io', type: 'Deposit', datetime: dtm.toUTCString(), amount: Number(Math.trunc(depositAmt)), balance: newBalance });
+    ctx.xaction.push({ userID: ctx.loggedIn[0].email, type: 'Deposit', datetime: dtm.toUTCString(), amount: Number(Math.trunc(depositAmt)), balance: newBalance });
 
     ctx.users[0].balance = newBalance;
     setShow(false);

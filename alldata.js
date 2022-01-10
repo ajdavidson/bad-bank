@@ -1,5 +1,10 @@
 function AllData() {
   const ctx = React.useContext(UserContext);
+  //
+  console.log(ctx.loggedIn[0].email)
+  const res = ctx.xaction.filter(p => p.userID == ctx.loggedIn[0].email)
+
+  console.log(res)
   return (
     <>
       <Card>
@@ -24,11 +29,11 @@ function AllData() {
             <tbody>
 
               <tr className='c-user' style={{ fontWeight: 'bold' }}>
-                <td>{ctx.users[0].level}</td>
-                <td>{ctx.users[0].name}</td>
-                <td>{ctx.users[0].email}</td>
-                <td>{ctx.users[0].password}</td>
-                <td>${ctx.users[0].balance}</td>
+                <td>{ctx.loggedIn[0].level}</td>
+                <td>{ctx.loggedIn[0].name}</td>
+                <td>{ctx.loggedIn[0].email}</td>
+                <td>{ctx.loggedIn[0].password}</td>
+                <td>${ctx.loggedIn[0].balance}</td>
               </tr>
 
             </tbody>
@@ -48,7 +53,7 @@ function AllData() {
               </tr>
             </thead>
             <tbody>
-              {ctx.xaction.map(t => (
+              {res.map(t => (
                 <tr>
                   <td>{t.userID}</td>
                   <td>{t.type}</td>

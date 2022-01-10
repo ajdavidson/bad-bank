@@ -6,7 +6,7 @@ function Home() {
       <Card style={{ width: '400px' }}>
         <Card.Header><i className="fas fa-home"/> <b>Globalin Bank Online Application</b></Card.Header>
         <Card.Body style={{textAlign:'center'}}>
-          <Card.Title>Hello, {ctx.users[0].name} {ctx.users[0].level === 'Admin' && '( Admin )'}</Card.Title>
+          <Card.Title>Hello, {ctx.loggedIn[0].name} {ctx.loggedIn[0].level === 'Admin' && '( Admin )'}</Card.Title>
           {/* <img src="bank.png" className="img-fluid" alt="Responsive image" /> */}
           <div style={{ fontSize: '38px' }}><i class="fas fa-globe fa-10x" style={{color: "green"}}/></div>
           <Card.Text >
