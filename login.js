@@ -123,6 +123,7 @@ function Login() {
         <tr>
           <th>Email</th>
           <th>Password</th>
+          <th>Level</th>
         </tr>
         </thead>
         <tbody>
@@ -130,6 +131,7 @@ function Login() {
           <tr>
             <td>{t.email}</td>
             <td>{t.password}</td>
+            <td>{t.level}</td>
           </tr>
         ))}
         </tbody>
