@@ -124,7 +124,7 @@ function Login() {
           <th>Level</th>
           <th>Email</th>
           <th>Password</th>
-          <th><i className="fas fa-copy"/></th>
+          <th style={{textAlign:'center'}}><i className="fas fa-copy"/></th>
         </tr>
         </thead>
         <tbody>
@@ -133,7 +133,7 @@ function Login() {
             <td>{t.level}</td>
             <td>{t.email}</td>
             <td>{t.password}</td>
-            <td>
+            <td style={{textAlign:'center'}}>
               <OverlayTrigger
                 placement='right'
                 overlay={
