@@ -1,7 +1,7 @@
 function Login() {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState('');
- // const [name, setName] = React.useState('');
+  const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const ctx = React.useContext(UserContext);
@@ -121,17 +121,32 @@ function Login() {
       <Table striped hover style={{width:'400px'}}>
         <thead>
         <tr>
+          <th>Level</th>
           <th>Email</th>
           <th>Password</th>
-          <th>Level</th>
+          <th><i className="fas fa-copy"/></th>
         </tr>
         </thead>
         <tbody>
         {ctx.users.slice(0, 4).map(t => (
           <tr>
+            <td>{t.level}</td>
             <td>{t.email}</td>
             <td>{t.password}</td>
-            <td>{t.level}</td>
+            <td>
+              <OverlayTrigger
+                placement='right'
+                overlay={
+                  <Tooltip>
+                    Click to fill in form with this Name and Password
+                  </Tooltip>
+                }
+              >
+                <Button type="submit" variant="outline-*" onClick={() => {setEmail(t.email); setPassword(t.password)}}><i
+                  className="fas fa-copy"/></Button>
+              </OverlayTrigger>
+              </td>
+
           </tr>
         ))}
         </tbody>

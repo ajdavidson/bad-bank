@@ -18,7 +18,7 @@ function Data() {
         name: 'Harry Osborn',
         email: 'harry.osborn@oscorp.io',
         password: 'm@2yJ4n3',
-        balance: 1337
+        balance: 1225
       },
       {
         acctNum: 990033003,
@@ -26,7 +26,7 @@ function Data() {
         name: 'Richard Parker',
         email: 'richard.parker@oscorp.io',
         password: 'Cc0nn025',
-        balance: 1337
+        balance: 1100
       },
       {
         acctNum: 990029414,
@@ -34,7 +34,7 @@ function Data() {
         name: 'Eugene Thompson',
         email: 'e.thompson@flash.io',
         password: '@g3nTv3n0m',
-        balance: 1337
+        balance: 100
       }
     ],
     xaction: [
@@ -64,14 +64,14 @@ function Data() {
         type: 'Deposit',
         datetime: 'Sat, Jan 01 2022 13:19:52 GMT',
         amount: 220,
-        balance: 1137
+        balance: 700
       },
       {
         userID: 'richard.parker@oscorp.io',
         type: 'Deposit',
         datetime: 'Mon, Jan 03 2022 03:19:52 GMT',
-        amount: 200,
-        balance: 1337
+        amount: 400,
+        balance: 1100
       },
       {
         userID: 'harry.osborn@oscorp.io',
@@ -84,15 +84,15 @@ function Data() {
         userID: 'harry.osborn@oscorp.io',
         type: 'Deposit',
         datetime: 'Sun, Jan 02 2022 14:41:02 GMT',
-        amount: 237,
-        balance: 1237
+        amount: 25,
+        balance: 1025
       },
       {
         userID: 'harry.osborn@oscorp.io',
         type: 'Deposit',
         datetime: 'Mon, Jan 03 2022 11:11:12 GMT',
         amount: 100,
-        balance: 1337
+        balance: 1225
       }
     ],
     loggedIn: [{
