@@ -62,6 +62,7 @@ The following tools were used in this project:
 
 - [React](https://pt-br.reactjs.org/)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
+- [React-Router](https://reactrouter.com/)
 - [Babel](https://babeljs.io/)
 - [Node.js](https://nodejs.org/en/)
 
