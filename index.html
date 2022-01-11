@@ -35,7 +35,19 @@
       background-attachment: fixed;
       background-size: cover;
     }
-
+    #root {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 i {
     color: green;
 }
@@ -53,7 +65,6 @@ i {
 <body>
   <!-- we will put our teact component inside this div -->
   <div id="root"></div>
-  <div id="avatar">
   <!-- load react -->
   <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>

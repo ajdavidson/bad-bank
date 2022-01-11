@@ -24,10 +24,10 @@ function NavBar() {
   // console.log(ctx.loggedIn[0].name)
   return (
     <>
-      <Navbar bg="light" variant="light" expand="lg" style={{ marginBottom: '0', paddingBottom: '0' }} sticky="top">
+      <Navbar bg="light" variant="light" expand="lg" style={{marginBottom: '0', paddingBottom: '0'}} sticky="top">
         <Container>
           <Navbar.Brand><i class="fas fa-globe" style={{color: "green"}}/> <b>Globalin Bank</b></Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" fill variant="tabs" defaultActiveKey="#/">
               {/* Home */}
@@ -74,30 +74,26 @@ function NavBar() {
               >
                 <Nav.Link href="#/withdraw/">Withdraw</Nav.Link>
               </OverlayTrigger>
-              {/* Balance */}
-              {/* <OverlayTrigger
-                placement='bottom'
-                overlay={
-                  <Tooltip>
-                    View your account balance
-                  </Tooltip>
-                }
-              >
-                <Nav.Link href="#/balance/">Balance</Nav.Link>
-              </OverlayTrigger> */}
-              {/* All Data */}
               <OverlayTrigger
                 placement='bottom'
                 overlay={
                   <Tooltip>
-                    View user data and  history of transactions
+                    View user data and history of transactions
                   </Tooltip>
                 }
               >
                 <Nav.Link href="#/alldata/">All Data</Nav.Link>
               </OverlayTrigger>
-              <Nav.Link href="#/login/">Login</Nav.Link>
-
+              <OverlayTrigger
+                placement='bottom'
+                overlay={
+                  <Tooltip>
+                    Log In to an Account
+                  </Tooltip>
+                }
+              >
+                <Nav.Link href="#/login/">Login</Nav.Link>
+              </OverlayTrigger>
             </Nav>
           </Navbar.Collapse>
         </Container>

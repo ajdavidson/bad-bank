@@ -23,7 +23,7 @@ function CreateAccount() {
 
     const resEmail = ctx.users.filter(p => p.email == email)
     console.log(resEmail)
-    if(resEmail.length !== 0){
+    if (resEmail.length !== 0) {
       setStatus("Email already in use");
       setTimeout(() => setStatus(''), 3000);
       return;
@@ -35,8 +35,16 @@ function CreateAccount() {
       setTimeout(() => setStatus(''), 3000);
       return;
     }
-    ctx.users.push({ level: 'User', name, email, password, balance: 100 });
+
+
+
+    ctx.users.push({level: 'User', name, email, password, balance: 100});
     setShow(false);
+  }
+  function logInNow() {
+    const resPwd = ctx.users.filter(p => p.password == password)
+    console.log(resPwd)
+    ctx.loggedIn = resPwd
   }
 
   function clearForm() {
@@ -48,7 +56,7 @@ function CreateAccount() {
 
   return (
     <React.Fragment>
-      <Card style={{ width: '400px' }}>
+      <Card style={{width: '400px'}}>
         <Card.Header><i class="fas fa-id-card"/> <b>Create Account</b></Card.Header>
         <Card.Body>
           <Card.Title>
@@ -57,56 +65,60 @@ function CreateAccount() {
           </Card.Title>
           {ctx.loggedIn[0].level === 'Admin' ? (
             <>
-          {show ? (
-            <>
-              {/*  */}
-              Name<br />
-              {/* <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br /> */}
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1"><i class="fas fa-user"/></InputGroup.Text>
-                <FormControl
-                  type="input" className="form-control" id="name" placeholder="Enter your name" value={name} onChange={e => setName(e.currentTarget.value)}
-                />
-              </InputGroup>
-              {/*  */}
-              Email address<br />
-              {/* <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br /> */}
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1"><i class="fas fa-envelope"/></InputGroup.Text>
-                <FormControl
-                  type="email" className="form-control" id="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.currentTarget.value)}
-                />
-              </InputGroup>
-              {/*  */}
-              Password<br />
-              {/* <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1"><i class="fas fa-key"/></InputGroup.Text>
-                <FormControl
-                  type="password" id="password" placeholder="Enter a password" value={password} onChange={e => setPassword(e.currentTarget.value)}
-                />
-              </InputGroup>
+              {show ? (
+                <>
+                  {/*  */}
+                  Name<br/>
+                  {/* <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br /> */}
+                  <InputGroup className="mb-3">
+                    <InputGroup.Text id="basic-addon1"><i class="fas fa-user"/></InputGroup.Text>
+                    <FormControl
+                      type="input" className="form-control" id="name" placeholder="Enter your name" value={name}
+                      onChange={e => setName(e.currentTarget.value)}
+                    />
+                  </InputGroup>
+                  {/*  */}
+                  Email address<br/>
+                  {/* <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br /> */}
+                  <InputGroup className="mb-3">
+                    <InputGroup.Text id="basic-addon1"><i class="fas fa-envelope"/></InputGroup.Text>
+                    <FormControl
+                      type="email" className="form-control" id="email" placeholder="Enter your email" value={email}
+                      onChange={e => setEmail(e.currentTarget.value)}
+                    />
+                  </InputGroup>
+                  {/*  */}
+                  Password<br/>
+                  {/* <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
+                  <InputGroup className="mb-3">
+                    <InputGroup.Text id="basic-addon1"><i class="fas fa-key"/></InputGroup.Text>
+                    <FormControl
+                      type="password" id="password" placeholder="Enter a password" value={password}
+                      onChange={e => setPassword(e.currentTarget.value)}
+                    />
+                  </InputGroup>
 
-              {name !== '' || email !== '' || password !== '' ? (
-                // <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
-                <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Create Account</Button>
+                  {name !== '' || email !== '' || password !== '' ? (
+                    // <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+                    <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Create Account</Button>
+                  ) : (
+                    <Button type="submit" variant="light" disabled>Fill in Form Info</Button>
+                  )}
+                </>
               ) : (
-                <Button type="submit" variant="light" disabled>Fill in Form Info</Button>
+                <>
+                  <h5><i class="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
+                  {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
+                  <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another account</Button>{'  '}
+                  <Button type="submit" variant="outline-secondary" onClick={logInNow}>Log in?</Button>
+                </>
               )}
             </>
           ) : (
             <>
-              <h5><i class="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
-              {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
-              <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another account</Button>
+              <h5><i className="fas fa-user-lock"/> Must be an Administrator</h5>
             </>
           )}
-            </>
-            ):(
-            <>
-              <h5><i className="fas fa-user-lock"/> Must be an  Administrator</h5>
-            </>
-            )}
         </Card.Body>
       </Card>
     </React.Fragment>
