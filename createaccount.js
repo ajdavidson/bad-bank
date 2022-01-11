@@ -6,6 +6,8 @@ function CreateAccount() {
   const [password, setPassword] = React.useState('');
   const ctx = React.useContext(UserContext);
 
+  const [passwordShown, setPasswordShown] = React.useState(false);
+
   function validate(field, label) {
     if (!field) {
       setStatus(label);
@@ -58,6 +60,12 @@ function CreateAccount() {
     setShow(true);
   }
 
+  const togglePassword = () => {
+    // When the handler is invoked
+    // inverse the boolean state of passwordShown
+    setPasswordShown(!passwordShown);
+  };
+
   return (
     <React.Fragment>
       <Card style={{width: '400px'}}>
@@ -97,9 +105,21 @@ function CreateAccount() {
                   <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon1"><i class="fas fa-key"/></InputGroup.Text>
                     <FormControl
-                      type="password" id="password" placeholder="Enter a password" value={password}
+                      type={passwordShown ? "text" : "password"}
+                      id="password" placeholder="Enter a password" value={password}
                       onChange={e => setPassword(e.currentTarget.value)}
                     />
+                    <InputGroup.Text onClick={togglePassword} style={{width: '45px'}}>
+                      {passwordShown ? (
+
+                        <span><i className="fas fa-eye-slash"/></span>
+
+                      ) : (
+
+                        <span><i className="fas fa-eye"/></span>
+
+                      )}
+                    </InputGroup.Text>
                   </InputGroup>
 
                   {name !== '' || email !== '' || password !== '' ? (

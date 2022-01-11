@@ -73,6 +73,8 @@ function Login() {
     // inverse the boolean state of passwordShown
     setPasswordShown(!passwordShown);
   };
+
+
   return (
     <React.Fragment>
       {/*<h5>Logged In {JSON.stringify(ctx.users)}</h5>*/}
@@ -105,14 +107,14 @@ function Login() {
                   id="password" placeholder="Enter a password" value={password}
                   onChange={e => setPassword(e.currentTarget.value)}
                 />
-                <InputGroup.Text onClick={togglePassword} style={{width:'45px'}}>
+                <InputGroup.Text onClick={togglePassword} style={{width: '45px'}}>
                   {passwordShown ? (
 
-                      <span><i className="fas fa-eye-slash"/></span>
+                    <span><i className="fas fa-eye-slash"/></span>
 
-                  ):(
+                  ) : (
 
-                      <span><i className="fas fa-eye"/></span>
+                    <span><i className="fas fa-eye"/></span>
 
                   )}
                 </InputGroup.Text>
