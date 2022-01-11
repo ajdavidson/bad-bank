@@ -138,7 +138,7 @@ function Login() {
                 placement='right'
                 overlay={
                   <Tooltip>
-                    Click to fill in form with this Name and Password
+                    Click to fill in form with this users info<br/>{t.email} <br/> {t.password}
                   </Tooltip>
                 }
               >
