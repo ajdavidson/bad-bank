@@ -20,6 +20,8 @@ const {
 } = ReactBootstrap;
 
 function NavBar() {
+  // const ctx = React.useContext(UserContext);
+  // console.log(ctx.loggedIn[0].name)
   return (
     <>
       <Navbar bg="light" variant="light" expand="lg" style={{ marginBottom: '0', paddingBottom: '0' }} sticky="top">
