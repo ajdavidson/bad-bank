@@ -5,6 +5,7 @@ function Data() {
   <UserContext.Provider value={{
     users: [
       {
+        acctNum: 990011001,
         level: 'Admin',
         name: 'Norman Osborn',
         email: 'norman.osborn@oscorp.io',
@@ -12,6 +13,7 @@ function Data() {
         balance: 1337
       },
       {
+        acctNum: 990022002,
         level: 'Manager',
         name: 'Harry Osborn',
         email: 'harry.osborn@oscorp.io',
@@ -19,6 +21,7 @@ function Data() {
         balance: 1337
       },
       {
+        acctNum: 990033003,
         level: 'Manager',
         name: 'Richard Parker',
         email: 'richard.parker@oscorp.io',
@@ -26,6 +29,7 @@ function Data() {
         balance: 1337
       },
       {
+        acctNum: 990029414,
         level: 'User',
         name: 'Eugene Thompson',
         email: 'e.thompson@flash.io',
@@ -60,13 +64,13 @@ function Data() {
         type: 'Deposit',
         datetime: 'Sat, Jan 01 2022 13:19:52 GMT',
         amount: 220,
-        balance: 1337
+        balance: 1137
       },
       {
         userID: 'richard.parker@oscorp.io',
         type: 'Deposit',
         datetime: 'Mon, Jan 03 2022 03:19:52 GMT',
-        amount: 220,
+        amount: 200,
         balance: 1337
       },
       {
@@ -92,6 +96,7 @@ function Data() {
       }
     ],
     loggedIn: [{
+      acctNum: 990011001,
       level: 'Admin',
       name: 'Norman Osborn',
       email: 'norman.osborn@oscorp.io',

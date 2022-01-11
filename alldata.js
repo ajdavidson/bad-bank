@@ -15,73 +15,80 @@ function AllData() {
           {console.log(ctx.users)}
 
           {/* */}
-          <h5><i className="fas fa-user"/> Account</h5>
+          <h5><i className="fas fa-user"/> Account ( {ctx.loggedIn[0].acctNum} )</h5>
           <Table striped hover>
             <thead>
-              <tr>
-                <th>Level</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Balance</th>
-              </tr>
+            <tr>
+              <th>Level</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Balance</th>
+            </tr>
             </thead>
             <tbody>
 
-              <tr className='c-user' style={{ fontWeight: 'bold' }}>
-                <td>{ctx.loggedIn[0].level}</td>
-                <td>{ctx.loggedIn[0].name}</td>
-                <td>{ctx.loggedIn[0].email}</td>
-                <td>{ctx.loggedIn[0].password}</td>
-                <td>${ctx.loggedIn[0].balance}</td>
-              </tr>
+            <tr className='c-user' style={{fontWeight: 'bold'}}>
+              <td>{ctx.loggedIn[0].level}</td>
+              <td>{ctx.loggedIn[0].name}</td>
+              <td>{ctx.loggedIn[0].email}</td>
+              <td>{ctx.loggedIn[0].password}</td>
+              <td>${ctx.loggedIn[0].balance}</td>
+            </tr>
 
             </tbody>
           </Table>
-
-          {/*  */}
-          <br/>
-          <h5><i className="fas fa-chart-bar"/> Transactions</h5>
-          <Table striped hover>
-            <thead>
-              <tr>
-                <th>User ID</th>
-                <th>Type</th>
-                <th>Date / Time</th>
-                <th>Amount</th>
-                <th>Balance</th>
-              </tr>
-            </thead>
-            <tbody>
-              {res.map(t => (
+          {res.length === 0 ? (
+            <h5><i className="fas fa-info-circle"/> No Transaction Data</h5>
+          ) : (
+            <>
+              {/*  */}
+              <br/>
+              <h5><i className="fas fa-chart-bar"/> Transactions ( {ctx.loggedIn[0].acctNum} )</h5>
+              <Table striped hover>
+                <thead>
                 <tr>
-                  <td>{t.userID}</td>
-                  <td>{t.type}</td>
-                  <td>{t.datetime}</td>
-                  <td>${t.amount}</td>
-                  <td>${t.balance}</td>
+                  <th>User ID</th>
+                  <th>Type</th>
+                  <th>Date / Time</th>
+                  <th>Amount</th>
+                  <th>Balance</th>
                 </tr>
-              )).reverse()}
-            </tbody>
-          </Table>
-          {(ctx.loggedIn[0].level === 'Admin' || ctx.loggedIn[0].level === 'Manager')  &&
+                </thead>
+                <tbody>
+                {res.map(t => (
+                  <tr>
+                    <td>{t.userID}</td>
+                    <td>{t.type}</td>
+                    <td>{t.datetime}</td>
+                    <td>${t.amount}</td>
+                    <td>${t.balance}</td>
+                  </tr>
+                )).reverse()}
+                </tbody>
+              </Table>
+            </>
+          )}
+          {(ctx.loggedIn[0].level !== 'User') &&
           <>
-          {/* */}
-          <br/>
-          <h5><i className="fas fa-users"/> All Users (Viewing as {ctx.loggedIn[0].level})</h5>
-          <Table striped hover>
-            <thead>
+            {/* */}
+            <br/>
+            <h5><i className="fas fa-users"/> All Users (Viewing as {ctx.loggedIn[0].level})</h5>
+            <Table striped hover>
+              <thead>
               <tr>
+                <th>Account #</th>
                 <th>Level</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Password</th>
                 <th>Balance</th>
               </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
               {ctx.users.map(t => (
                 <tr>
+                  <td>{t.acctNum}</td>
                   <td>{t.level}</td>
                   <td>{t.name}</td>
                   <td>{t.email}</td>
@@ -89,8 +96,8 @@ function AllData() {
                   <td>${t.balance}</td>
                 </tr>
               ))}
-            </tbody>
-          </Table>
+              </tbody>
+            </Table>
           </>
           }
         </Card.Body>

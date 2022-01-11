@@ -36,15 +36,19 @@ function CreateAccount() {
       return;
     }
 
+    let acct = '9300' + (Math.floor(Math.random() * 90000) + 10000);
+    console.log(acct)
 
-
-    ctx.users.push({level: 'User', name, email, password, balance: 100});
+    ctx.users.push({acctNum: acct, level: 'User', name, email, password, balance: 100});
     setShow(false);
   }
+
   function logInNow() {
-    const resPwd = ctx.users.filter(p => p.password == password)
-    console.log(resPwd)
-    ctx.loggedIn = resPwd
+    const resPwd = ctx.users.filter(p => p.password == password);
+    console.log(resPwd);
+    ctx.loggedIn = resPwd;
+    //alert('Logged in as: ' + ctx.loggedIn[0].name);
+    clearForm();
   }
 
   function clearForm() {
@@ -121,6 +125,8 @@ function CreateAccount() {
           )}
         </Card.Body>
       </Card>
+      <br/>
+      <h5><i className="fas fa-user-shield"/> Logged In as: {ctx.loggedIn[0].name}</h5>
     </React.Fragment>
   )
 }

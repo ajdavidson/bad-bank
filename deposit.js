@@ -17,12 +17,25 @@ function Deposit() {
     console.log(depositAmt);
     if (!validate(depositAmt, 'Enter a Number greater than Zero')) return;
 
-    const newBalance = Number(ctx.users[0].balance) + Number(Math.trunc(depositAmt));
+    const newBalance = Number(ctx.loggedIn[0].balance) + Number(Math.trunc(depositAmt));
     var dtm = new Date();
 
     ctx.xaction.push({ userID: ctx.loggedIn[0].email, type: 'Deposit', datetime: dtm.toUTCString(), amount: Number(Math.trunc(depositAmt)), balance: newBalance });
 
-    ctx.users[0].balance = newBalance;
+    // userID = ctx.users.findIndex(ctx.loggedIn[0].email);
+    // console.log(ctx.users.findIndex(ctx.loggedIn[0].email));
+    function find(arr) {
+      for(var i = 0; i < arr.length; i++) {
+        if(arr[i].email === ctx.loggedIn[0].email) {
+          return i;
+        }
+      }
+    }
+    const userID = find(ctx.users)
+    //console.log(ctx.users.indexOf('harry.osborn@oscorp.io'));
+    console.log(userID);
+
+    ctx.users[userID].balance = newBalance;
     setShow(false);
   }
 
@@ -40,7 +53,7 @@ function Deposit() {
             &nbsp;
             {status !== '' && <i class="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
           </Card.Title>
-          <Card.Subtitle><br /><h5><i class="fas fa-balance-scale"/> Balance: ${JSON.stringify(ctx.users[0].balance)}</h5></Card.Subtitle>
+          <Card.Subtitle><br /><h5><i class="fas fa-balance-scale"/> Balance: ${JSON.stringify(ctx.loggedIn[0].balance)}</h5></Card.Subtitle>
           {show ? (
             <>
               <br />
@@ -72,6 +85,8 @@ function Deposit() {
           )}
         </Card.Body>
       </Card>
+      <br/>
+      <h5><i className="fas fa-user-shield"/> Logged In as: {ctx.loggedIn[0].name}</h5>
     </React.Fragment>
   )
 }
