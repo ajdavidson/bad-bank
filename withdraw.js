@@ -40,7 +40,7 @@ function Withdraw() {
     console.log(userID);
 
     ctx.users[userID].balance = newBalance;
-    // ctx.users[0].balance = newBalance;
+    ctx.loggedIn[0].balance = newBalance;
     setShow(false);
   }
 
