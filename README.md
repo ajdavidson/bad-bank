@@ -44,25 +44,27 @@
 
 <br>
 
-## :dart: About ##
+## :eye_speech_bubble: About ##
 
-Describe your project
+React project Fetches remote data about Books from the Penguin Publishing public API.
+Uses the Axios promise-based HTTP Client for node.js and the browser.  Bootstrap styling
+including a react-bootstrap Modal that uses dynamic data.
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Promise based remote data fetch\
+:heavy_check_mark: Lists Books in Penguin Random House API\
+
 
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
+- [Babel](https://babeljs.io/)
+- [Node.js](https://nodejs.org/en/)
+
 
 ## :white_check_mark: Requirements ##
 
@@ -78,12 +80,13 @@ $ git clone https://github.com/ajdavidson/bad-bank
 $ cd bad-bank
 
 # Install dependencies
-$ yarn
+$ http-server
 
 # Run the project
-$ yarn start
+$ Available on:
+  http://127.0.0.1:8080
+  http://localhost:8080
 
-# The server will initialize in the <http://localhost:3000>
 ```
 
 ## :memo: License ##
