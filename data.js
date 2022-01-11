@@ -2,7 +2,6 @@ function Data() {
   const ctx = React.useContext(UserContext);
   return (
     <>
-    {/* <UserContext.Provider value={{ users: [{ name: 'Norman Osborn', email: 'norman.osborn@oscorp.io', password: '12345678', balance: 1337 }] }}> */}
   <UserContext.Provider value={{
     users: [
       {
