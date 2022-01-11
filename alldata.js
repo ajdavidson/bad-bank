@@ -10,7 +10,7 @@ function AllData() {
       <Card>
         <Card.Header><i className="fas fa-database"/> <b>All Data</b></Card.Header>
         <Card.Body>
-          <Card.Title><h3><i className="far fa-user-circle"/> Profile</h3></Card.Title>
+          {/*<Card.Title><h3><i className="far fa-user-circle"/> Profile</h3></Card.Title>*/}
           <br/>
           {console.log(ctx.users)}
 
@@ -64,10 +64,11 @@ function AllData() {
               )).reverse()}
             </tbody>
           </Table>
-
+          {(ctx.loggedIn[0].level === 'Admin' || ctx.loggedIn[0].level === 'Manager')  &&
+          <>
           {/* */}
           <br/>
-          <h5><i className="fas fa-users"/> All Users</h5>
+          <h5><i className="fas fa-users"/> All Users (Viewing as {ctx.loggedIn[0].level})</h5>
           <Table striped hover>
             <thead>
               <tr>
@@ -90,6 +91,8 @@ function AllData() {
               ))}
             </tbody>
           </Table>
+          </>
+          }
         </Card.Body>
       </Card>
 

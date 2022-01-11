@@ -1,5 +1,7 @@
 function Spa() {
   return (
+    <>
+
     <HashRouter>
       <NavBar/>
       {/* <UserContext.Provider value={{ users: [{ name: 'Norman Osborn', email: 'norman.osborn@oscorp.io', password: '12345678', balance: 1337 }] }}> */}
@@ -16,7 +18,7 @@ function Spa() {
             level: 'Manager',
             name: 'Harry Osborn',
             email: 'harry.osborn@oscorp.io',
-            password: 'm42yJ4n3',
+            password: 'm@2yJ4n3',
             balance: 1337
           },
           {
@@ -24,6 +26,13 @@ function Spa() {
             name: 'Richard Parker',
             email: 'richard.parker@oscorp.io',
             password: 'Cc0nn025',
+            balance: 1337
+          },
+          {
+            level: 'User',
+            name: 'Eugene Thompson',
+            email: 'e.thompson@flash.io',
+            password: '@g3nTv3n0m',
             balance: 1337
           }
         ],
@@ -105,7 +114,7 @@ function Spa() {
         </div>
       </UserContext.Provider>
     </HashRouter>
-
+</>
   );
 }
 

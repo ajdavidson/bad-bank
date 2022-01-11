@@ -10,7 +10,7 @@ function Home() {
           {/* <img src="bank.png" className="img-fluid" alt="Responsive image" /> */}
           <div style={{ fontSize: '38px' }}><i class="fas fa-globe fa-10x" style={{color: "green"}}/></div>
           <Card.Text >
-            We have the formula for your finances
+            <strong>We have the formula for your finances</strong>
           </Card.Text>
         </Card.Body>
       </Card>

@@ -35,7 +35,7 @@ function CreateAccount() {
       setTimeout(() => setStatus(''), 3000);
       return;
     }
-    ctx.users.push({ level: 'Standard User', name, email, password, balance: 100 });
+    ctx.users.push({ level: 'User', name, email, password, balance: 100 });
     setShow(false);
   }
 
