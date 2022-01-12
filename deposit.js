@@ -20,23 +20,28 @@ function Deposit() {
     const newBalance = Number(ctx.loggedIn[0].balance) + Number(Math.trunc(depositAmt));
     var dtm = new Date();
 
-    ctx.xaction.push({ userID: ctx.loggedIn[0].email, type: 'Deposit', datetime: dtm.toUTCString(), amount: Number(Math.trunc(depositAmt)), balance: newBalance });
 
-    // userID = ctx.users.findIndex(ctx.loggedIn[0].email);
-    // console.log(ctx.users.findIndex(ctx.loggedIn[0].email));
     function find(arr) {
-      for(var i = 0; i < arr.length; i++) {
-        if(arr[i].email === ctx.loggedIn[0].email) {
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].email === ctx.loggedIn[0].email) {
           return i;
         }
       }
     }
+
     const userID = find(ctx.users)
-    //console.log(ctx.users.indexOf('harry.osborn@oscorp.io'));
     console.log(userID);
 
+    ctx.xaction.push({
+      userID: ctx.loggedIn[0].email,
+      type: 'Deposit',
+      datetime: dtm.toUTCString(),
+      amount: Number(Math.trunc(depositAmt)),
+      balance: newBalance
+    });
     ctx.users[userID].balance = newBalance;
     ctx.loggedIn[0].balance = newBalance;
+
     setShow(false);
   }
 
@@ -47,21 +52,24 @@ function Deposit() {
 
   return (
     <React.Fragment>
-      <Card style={{ width: '400px' }}>
+      <Card style={{width: '400px'}}>
         <Card.Header><i class="fas fa-balance-scale-left"/> <b>Deposit</b></Card.Header>
         <Card.Body>
           <Card.Title>
             &nbsp;
             {status !== '' && <i class="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
           </Card.Title>
-          <Card.Subtitle><br /><h5><i class="fas fa-balance-scale"/> Balance: ${JSON.stringify(ctx.loggedIn[0].balance)}</h5></Card.Subtitle>
+          <Card.Subtitle><br/><h5><i class="fas fa-balance-scale"/> Balance: ${JSON.stringify(ctx.loggedIn[0].balance)}
+          </h5></Card.Subtitle>
           {show ? (
             <>
-              <br />
+              <br/>
               {/* <input type="input" className="form-control" id="depositAmt" placeholder="Enter deposit amount" value={depositAmt} onChange={e => setDepositAmt(e.currentTarget.value)} /><br /> */}
               <InputGroup className="mb-3">
                 <InputGroup.Text>$</InputGroup.Text>
-                <FormControl aria-label="Amount (to the nearest dollar)" id="depositAmt" placeholder="Enter a number greater than zero"  onChange={e => setDepositAmt(e.currentTarget.value)} />
+                <FormControl aria-label="Amount (to the nearest dollar)" id="depositAmt"
+                             placeholder="Enter a number greater than zero"
+                             onChange={e => setDepositAmt(e.currentTarget.value)}/>
                 <InputGroup.Text>.00</InputGroup.Text>
               </InputGroup>
               {/* Email address<br />
