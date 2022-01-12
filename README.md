@@ -46,14 +46,12 @@
 
 ## :eye_speech_bubble: About ##
 
-React project Fetches remote data about Books from the Penguin Publishing public API.
-Uses the Axios promise-based HTTP Client for node.js and the browser.  Bootstrap styling
-including a react-bootstrap Modal that uses dynamic data.
+Front End Banking simulator with react.
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Promise based remote data fetch\
-:heavy_check_mark: Lists Books in Penguin Random House API\
+:heavy_check_mark: React Router component management\
+:heavy_check_mark: Global Context object\
 
 
 ## :rocket: Technologies ##
