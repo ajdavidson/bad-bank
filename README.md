@@ -46,12 +46,17 @@
 
 ## :eye_speech_bubble: About ##
 
-Front End Banking simulator with react.
+Front End Banking simulator with react.  
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: React Router component management\
-:heavy_check_mark: Global Context object\
+:heavy_check_mark: React Router link management\
+:heavy_check_mark: Global Context user data\
+:heavy_check_mark: New user creation\
+:heavy_check_mark: Login Functionality\
+:heavy_check_mark: Meaningful user types\
+:heavy_check_mark: Transaction saving with Timestamp\
+:heavy_check_mark: Display of all submissions\
 
 
 ## :rocket: Technologies ##
