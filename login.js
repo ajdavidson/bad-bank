@@ -107,7 +107,7 @@ function Login() {
                   id="password" placeholder="Enter a password" value={password}
                   onChange={e => setPassword(e.currentTarget.value)}
                 />
-                <InputGroup.Text onClick={togglePassword} style={{width: '45px'}}>
+                <InputGroup.Text onClick={togglePassword} style={{width: '45px', cursor: 'pointer'}}>
                   {passwordShown ? (
 
                     <span><i className="fas fa-eye-slash"/></span>
@@ -165,10 +165,11 @@ function Login() {
                   </Tooltip>
                 }
               >
-                <Button type="submit" variant="outline-*" onClick={() => {
-                  setEmail(t.email);
-                  setPassword(t.password)
-                }}><i
+                <Button type="submit" variant="outline-*" style={{cursor: 'copy'}}
+                        onClick={() => {
+                          setEmail(t.email);
+                          setPassword(t.password)
+                        }}><i
                   className="fas fa-copy"/></Button>
               </OverlayTrigger>
             </td>

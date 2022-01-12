@@ -109,7 +109,7 @@ function CreateAccount() {
                       id="password" placeholder="Enter a password" value={password}
                       onChange={e => setPassword(e.currentTarget.value)}
                     />
-                    <InputGroup.Text onClick={togglePassword} style={{width: '45px'}}>
+                    <InputGroup.Text onClick={togglePassword} style={{width: '45px',cursor:'pointer'}}>
                       {passwordShown ? (
 
                         <span><i className="fas fa-eye-slash"/></span>
