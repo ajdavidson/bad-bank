@@ -15,7 +15,6 @@ function AllData() {
               {/*<Card.Title><h3><i className="far fa-user-circle"/> Profile</h3></Card.Title>*/}
               <br/>
               {console.log(ctx.users)}
-
               {/* */}
               <h5><i className="fas fa-user"/> Account ( {ctx.loggedIn[0].acctNum} )</h5>
               <Table striped hover>
