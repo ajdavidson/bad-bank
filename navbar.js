@@ -1,16 +1,3 @@
-const {
-  Container,
-  Button,
-  Card,
-  InputGroup,
-  FormControl,
-  Navbar,
-  Nav,
-  OverlayTrigger,
-  Tooltip,
-  Table
-} = ReactBootstrap;
-
 function NavBar() {
   // const ctx = React.useContext(UserContext);
   // console.log(ctx.loggedIn[0].name)
