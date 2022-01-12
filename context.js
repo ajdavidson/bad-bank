@@ -2,7 +2,20 @@ const Route       = ReactRouterDOM.Route;
 const Link        = ReactRouterDOM.Link;
 const HashRouter  = ReactRouterDOM.HashRouter;
 const UserContext = React.createContext(null);
-
+const {
+  Container,
+  Button,
+  Card,
+  InputGroup,
+  FormControl,
+  Navbar,
+  Nav,
+  OverlayTrigger,
+  Tooltip,
+  Table,
+  Col,
+  Row
+} = ReactBootstrap;
 // function Card(props){
 //     function classes(){
 //       const bg  = props.bgcolor ? ' bg-' + props.bgcolor : ' ';
