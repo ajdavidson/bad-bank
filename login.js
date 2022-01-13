@@ -161,7 +161,11 @@ function Login() {
             </thead>
             <tbody>
             {ctx.users.slice(0, 4).map(t => (
-              <tr>
+              <tr style={{cursor: 'copy'}}
+                  onClick={() => {
+                    setEmail(t.email);
+                    setPassword(t.password)
+                  }}>
                 <td>{t.level}</td>
                 <td>{t.email}</td>
                 <td>{t.password}</td>
