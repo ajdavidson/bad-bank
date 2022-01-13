@@ -83,6 +83,7 @@ function CreateAccount() {
                   <>
                     {show ? (
                       <>
+                        <Form>
                         {/*  */}
                         Name<br/>
                         {/* <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br /> */}
@@ -91,6 +92,7 @@ function CreateAccount() {
                           <FormControl
                             type="input" className="form-control" id="name" placeholder="Enter your name" value={name}
                             onChange={e => setName(e.currentTarget.value)}
+                            autoComplete="current-password"
                           />
                         </InputGroup>
                         {/*  */}
@@ -102,6 +104,7 @@ function CreateAccount() {
                             type="email" className="form-control" id="email" placeholder="Enter your email"
                             value={email}
                             onChange={e => setEmail(e.currentTarget.value)}
+                            autoComplete="current-password"
                           />
                         </InputGroup>
                         {/*  */}
@@ -113,6 +116,7 @@ function CreateAccount() {
                             type={passwordShown ? "text" : "password"}
                             id="password" placeholder="Enter a password" value={password}
                             onChange={e => setPassword(e.currentTarget.value)}
+                            autoComplete="current-password"
                           />
                           <InputGroup.Text onClick={togglePassword} style={{width: '45px', cursor: 'pointer'}}>
                             {passwordShown ? (
@@ -134,7 +138,7 @@ function CreateAccount() {
                         ) : (
                           <Button type="submit" variant="light" disabled>Fill in Form Info</Button>
                         )}
-                      </>
+                        </Form></>
                     ) : (
                       <>
                         <h5><i className="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
@@ -145,6 +149,7 @@ function CreateAccount() {
                       </>
                     )}
                   </>
+
                 ) : (
                   <>
                     <h5><i className="fas fa-user-lock"/> Must be an Administrator</h5>

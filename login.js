@@ -87,6 +87,7 @@ function Login() {
                 </Card.Title>
                 {show ? (
                   <>
+                    <Form>
                     {/*  */}
                     Email address<br/>
                     {/* <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br /> */}
@@ -95,6 +96,7 @@ function Login() {
                       <FormControl
                         type="email" className="form-control" id="email" placeholder="Enter your email" value={email}
                         onChange={e => setEmail(e.currentTarget.value)}
+                        autoComplete="current-password"
                       />
                     </InputGroup>
                     {/*  */}
@@ -106,6 +108,7 @@ function Login() {
                         type={passwordShown ? "text" : "password"}
                         id="password" placeholder="Enter a password" value={password}
                         onChange={e => setPassword(e.currentTarget.value)}
+                        autoComplete="current-password"
                       />
                       <InputGroup.Text onClick={togglePassword} style={{width: '45px', cursor: 'pointer'}}>
                         {passwordShown ? (
@@ -127,7 +130,7 @@ function Login() {
                     ) : (
                       <Button type="submit" variant="light" disabled>Fill in Form Info</Button>
                     )}
-                  </>
+                  </Form></>
                 ) : (
                   <>
                     <h5><i className="fas fa-user-check"/> Logged In as {ctx.loggedIn[0].name}</h5>
@@ -169,6 +172,7 @@ function Login() {
                 <td>{t.password}</td>
                 <td style={{textAlign: 'center'}}>
                   <OverlayTrigger
+
                     placement='right'
                     overlay={
                       <Tooltip>
@@ -176,7 +180,7 @@ function Login() {
                       </Tooltip>
                     }
                   >
-                    <Link style={{cursor: 'copy'}}
+                    <Link key={index} style={{cursor: 'copy'}}
                             onClick={() => {
                               setEmail(t.email);
                               setPassword(t.password)
