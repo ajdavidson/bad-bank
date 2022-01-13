@@ -83,7 +83,7 @@ function Login() {
               <Card.Body>
                 <Card.Title>
                   &nbsp;
-                  {status !== '' && <i class="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
+                  {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
                 </Card.Title>
                 {show ? (
                   <>
@@ -91,7 +91,7 @@ function Login() {
                     Email address<br/>
                     {/* <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br /> */}
                     <InputGroup className="mb-3">
-                      <InputGroup.Text id="basic-addon1"><i class="fas fa-envelope"/></InputGroup.Text>
+                      <InputGroup.Text id="basic-addon1"><i className="fas fa-envelope"/></InputGroup.Text>
                       <FormControl
                         type="email" className="form-control" id="email" placeholder="Enter your email" value={email}
                         onChange={e => setEmail(e.currentTarget.value)}
@@ -101,7 +101,7 @@ function Login() {
                     Password<br/>
                     {/* <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
                     <InputGroup className="mb-3">
-                      <InputGroup.Text id="basic-addon1"><i class="fas fa-key"/></InputGroup.Text>
+                      <InputGroup.Text id="basic-addon1"><i className="fas fa-key"/></InputGroup.Text>
                       <FormControl
                         type={passwordShown ? "text" : "password"}
                         id="password" placeholder="Enter a password" value={password}

@@ -68,14 +68,14 @@ function Withdraw() {
           <Col md={4}>
 
             <Card style={{width: '400px'}}>
-              <Card.Header><i class="fas fa-balance-scale-right"/> <b>Withdraw</b></Card.Header>
+              <Card.Header><i className="fas fa-balance-scale-right"/> <b>Withdraw</b></Card.Header>
               <Card.Body>
                 <Card.Title>
                   &nbsp;
-                  {status !== '' && <i class="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
+                  {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
 
                 </Card.Title>
-                <Card.Subtitle><br/><h5><i class="fas fa-balance-scale"/> Balance:
+                <Card.Subtitle><br/><h5><i className="fas fa-balance-scale"/> Balance:
                   ${JSON.stringify(ctx.loggedIn[0].balance)}
                 </h5></Card.Subtitle>
                 {show ? (
@@ -104,7 +104,7 @@ function Withdraw() {
                   </>
                 ) : (
                   <>
-                    <h5><i class="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
+                    <h5><i className="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
                     {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Withdrawal</button> */}
                     <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another
                       Withdrawal</Button>
