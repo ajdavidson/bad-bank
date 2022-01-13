@@ -19,8 +19,9 @@ function NavBar() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" fill variant="tabs" defaultActiveKey="#/">
               {/*Build NAVBAR */}
-              {navBuild.map(n =>(
+              {navBuild.map((n, index) => (
               <OverlayTrigger
+                key={index}
                 placement='bottom'
                 overlay={
                   <Tooltip>
@@ -28,7 +29,7 @@ function NavBar() {
                   </Tooltip>
                 }
               >
-                <Nav.Link className="nav-links" href={'#' + n.link}>{n.tab}</Nav.Link>
+                <Nav.Link key={index} className="nav-links" href={'#' + n.link}>{n.tab}</Nav.Link>
               </OverlayTrigger>
               ) )}
             </Nav>

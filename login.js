@@ -7,14 +7,6 @@ function Login() {
   const ctx = React.useContext(UserContext);
 
   const [passwordShown, setPasswordShown] = React.useState(false);
-  // const res = ctx.users.filter(p => p.email == "richard.parker@oscorp.io")
-  // console.log(res)
-  //
-  // if(res.length !== 0){
-  //   alert("Value exists!")
-  // } else{
-  //   alert("Value does not exists!")
-  // }
 
   //
   function validate(field, label) {
@@ -57,7 +49,12 @@ function Login() {
       return;
     }
     //ctx.users.push({ level: 'Standard User', name, email, password, balance: 100 });
+    var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
+    console.log('From Local Storage', {storedCTX});
+    console.log('Log Out ', storedCTX.loggedIn[0].name)
+    //console.log('Last Log In ', resEmail[0].name)
     ctx.loggedIn = resPwd
+    localStorage.setItem("ctx_data", JSON.stringify(ctx));
     setShow(false);
   }
 
@@ -160,8 +157,9 @@ function Login() {
             </tr>
             </thead>
             <tbody>
-            {ctx.users.slice(0, 4).map(t => (
+            {ctx.users.slice(0, 4).map((t, index) => (
               <tr style={{cursor: 'copy'}}
+                  key={index}
                   onClick={() => {
                     setEmail(t.email);
                     setPassword(t.password)

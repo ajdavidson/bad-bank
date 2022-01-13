@@ -57,8 +57,8 @@ function AllData() {
                     </tr>
                     </thead>
                     <tbody>
-                    {res.map(t => (
-                      <tr>
+                    {res.map((t, index) => (
+                      <tr key={index}>
                         <td>{t.userID}</td>
                         <td>{t.type}</td>
                         <td>{t.datetime}</td>
@@ -87,8 +87,8 @@ function AllData() {
                   </tr>
                   </thead>
                   <tbody>
-                  {ctx.users.map(t => (
-                    <tr>
+                  {ctx.users.map((t, index) => (
+                    <tr key={index}>
                       <td>{t.acctNum}</td>
                       <td>{t.level}</td>
                       <td>{t.name}</td>
