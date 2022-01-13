@@ -15,7 +15,8 @@ const {
   Table,
   Col,
   Row,
-  Form
+  Form,
+  Spinner
 } = ReactBootstrap;
 // function Card(props){
 //     function classes(){

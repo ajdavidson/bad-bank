@@ -1,4 +1,7 @@
 function NavBar() {
+  var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
+
+  console.log('From Local Storage', {storedCTX});
   // const ctx = React.useContext(UserContext);
   // console.log(ctx.loggedIn[0].name)
   const navBuild =
@@ -33,6 +36,12 @@ function NavBar() {
               </OverlayTrigger>
               ) )}
             </Nav>
+            {storedCTX !== null ? (
+              <div style={{position: 'absolute', top: '15px', right: '10px'}}><h5><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</h5></div>
+
+            ):(
+            <div style={{position: 'absolute', top: '15px', right: '10px'}}><h5><i className="fas fa-user-circle"/> Norman Osborn</h5></div>
+              )}
           </Navbar.Collapse>
         </Container>
       </Navbar>

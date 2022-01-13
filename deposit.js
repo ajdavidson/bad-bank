@@ -99,10 +99,10 @@ function Deposit() {
               </Card.Body>
             </Card>
           </Col>
-          <Col md={8} style={{position:'relative'}}>
-            <br/>
-            <div style={{position:'absolute', top:'0',right:'0'}}><h5><i className="fas fa-user-circle"/> {ctx.loggedIn[0].name}</h5></div>
-          </Col>
+          {/*<Col md={8} style={{position:'relative'}}>*/}
+          {/*  <br/>*/}
+          {/*  <div style={{position:'absolute', top:'0',right:'0'}}><h5><i className="fas fa-user-circle"/> {ctx.loggedIn[0].name}</h5></div>*/}
+          {/*</Col>*/}
         </Row>
 
       </Container>

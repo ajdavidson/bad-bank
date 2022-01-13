@@ -55,6 +55,9 @@ function Login() {
     //console.log('Last Log In ', resEmail[0].name)
     ctx.loggedIn = resPwd
     localStorage.setItem("ctx_data", JSON.stringify(ctx));
+    setTimeout(() => window.location.reload(true), 3000);
+    //window.location.reload(true);
+    //window.location.href = '#home';
     setShow(false);
   }
 
@@ -133,19 +136,20 @@ function Login() {
                   </Form></>
                 ) : (
                   <>
-                    <h5><i className="fas fa-user-check"/> Logged In as {ctx.loggedIn[0].name}</h5>
+
+                    <h5><Spinner animation="border" /> Logging in as {ctx.loggedIn[0].name}...</h5>
                     {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
-                    <Button type="submit" variant="outline-secondary" onClick={clearForm}>Continue</Button>
+                    {/*<Button type="submit" variant="outline-secondary" onClick={clearForm}>Continue</Button>*/}
                   </>
                 )}
               </Card.Body>
             </Card>
 
           </Col>
-          <Col md={8} style={{position:'relative'}}>
-            <br/>
-            <div style={{position:'absolute', top:'0',right:'0'}}><h5><i className="fas fa-user-circle"/> {ctx.loggedIn[0].name}</h5></div>
-          </Col>
+          {/*<Col md={8} style={{position:'relative'}}>*/}
+          {/*  <br/>*/}
+          {/*  <div style={{position:'absolute', top:'0',right:'0'}}><h5><i className="fas fa-user-circle"/> {ctx.loggedIn[0].name}</h5></div>*/}
+          {/*</Col>*/}
         </Row>
         <Row>
         <Col md={8} style={{position:'relative'}}>
