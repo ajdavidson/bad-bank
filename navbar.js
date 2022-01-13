@@ -1,7 +1,7 @@
 function NavBar() {
   var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
 
-  console.log('From Local Storage', {storedCTX});
+  console.log('From Local Storage:NavBar', {storedCTX});
   // const ctx = React.useContext(UserContext);
   // console.log(ctx.loggedIn[0].name)
   const navBuild =
@@ -43,17 +43,6 @@ function NavBar() {
               ))}
             </Nav>
             {storedCTX !== null ? (
-              // <Dropdown style={{position: 'absolute', top: '15px', right: '10px'}}>
-              //   <Dropdown.Toggle variant="outline-*" id="dropdown-basic">
-              //     <h5><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</h5>
-              //   </Dropdown.Toggle>
-              //
-              //   <Dropdown.Menu>
-              //     <Dropdown.Item href="#">Log Out</Dropdown.Item>
-              //     {/*<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>*/}
-              //     {/*<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>*/}
-              //   </Dropdown.Menu>
-              // </Dropdown>
               <Dropdown as={ButtonGroup} style={{position: 'absolute', top: '10px', right: '10px'}}>
                 <Button variant="outline-*"><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</Button>
 
@@ -61,12 +50,10 @@ function NavBar() {
 
                 <Dropdown.Menu>
                   <Dropdown.Header>Clears All Data<br/>Clears Local Storage<br/>Resets Simulator</Dropdown.Header>
-                  <Dropdown.Divider />
+                  <Dropdown.Divider/>
                   <Dropdown.Item onClick={logOut}>Log Out</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              // <div style={{position: 'absolute', top: '15px', right: '10px'}}><h5><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</h5></div>
-
             ) : (
               <Dropdown as={ButtonGroup} style={{position: 'absolute', top: '10px', right: '10px'}}>
                 <Button variant="outline-*"><i className="fas fa-user-circle"/> Norman Osborn</Button>
@@ -75,11 +62,11 @@ function NavBar() {
 
                 <Dropdown.Menu>
                   <Dropdown.Header>Clears All Data<br/>Clears Local Storage<br/>Resets Simulator</Dropdown.Header>
-                  <Dropdown.Divider />
+                  <Dropdown.Divider/>
                   <Dropdown.Item onClick={logOut}>Log Out</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              )}
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>

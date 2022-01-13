@@ -1,6 +1,7 @@
 const Route       = ReactRouterDOM.Route;
 const Link        = ReactRouterDOM.Link;
 const HashRouter  = ReactRouterDOM.HashRouter;
+const useHistory = ReactRouterDOM.useHistory;
 const UserContext = React.createContext(null);
 const {
   Container,
@@ -20,6 +21,7 @@ const {
   Dropdown,
   ButtonGroup
 } = ReactBootstrap;
+
 // function Card(props){
 //     function classes(){
 //       const bg  = props.bgcolor ? ' bg-' + props.bgcolor : ' ';

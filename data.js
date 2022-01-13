@@ -3,10 +3,12 @@ function Data() {
 
 
 
-
+  const history = useHistory();
+  console.log(history);
+  history.push("/");
   var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
 
-  console.log('From Local Storage', {storedCTX});
+  //console.log('From Local Storage:Data', {storedCTX});
   //console.log('Last Log In ', storedCTX.loggedIn[0].name)
 
 

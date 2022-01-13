@@ -50,7 +50,7 @@ function Login() {
     }
     //ctx.users.push({ level: 'Standard User', name, email, password, balance: 100 });
     var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
-    console.log('From Local Storage', {storedCTX});
+    console.log('From Local Storage:Login', {storedCTX});
     //console.log('Log Out ', storedCTX.loggedIn[0].name)
     //console.log('Last Log In ', resEmail[0].name)
     ctx.loggedIn = resPwd
