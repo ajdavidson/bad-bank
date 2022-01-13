@@ -37,7 +37,27 @@ function NavBar() {
               ) )}
             </Nav>
             {storedCTX !== null ? (
-              <div style={{position: 'absolute', top: '15px', right: '10px'}}><h5><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</h5></div>
+                // <Dropdown style={{position: 'absolute', top: '15px', right: '10px'}}>
+                //   <Dropdown.Toggle variant="outline-*" id="dropdown-basic">
+                //     <h5><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</h5>
+                //   </Dropdown.Toggle>
+                //
+                //   <Dropdown.Menu>
+                //     <Dropdown.Item href="#">Log Out</Dropdown.Item>
+                //     {/*<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>*/}
+                //     {/*<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>*/}
+                //   </Dropdown.Menu>
+                // </Dropdown>
+              <Dropdown as={ButtonGroup} style={{position: 'absolute', top: '10px', right: '10px'}}>
+                <Button variant="outline-*"><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</Button>
+
+                <Dropdown.Toggle split variant="outline" id="dropdown-split-basic" />
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#">Log Out</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              // <div style={{position: 'absolute', top: '15px', right: '10px'}}><h5><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</h5></div>
 
             ):(
             <div style={{position: 'absolute', top: '15px', right: '10px'}}><h5><i className="fas fa-user-circle"/> Norman Osborn</h5></div>
