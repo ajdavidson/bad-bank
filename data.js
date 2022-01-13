@@ -2,7 +2,7 @@ function Data() {
   const ctx = React.useContext(UserContext);
 
 
-
+  // go to your home
   const history = useHistory();
   console.log(history);
   history.push("/");
