@@ -46,7 +46,7 @@
 
 ## :eye_speech_bubble: About ##
 
-Front End Banking simulator with react.  
+Front End Banking simulator with react.  Global Context Data is saved to Local Browser storage and persists after browser is closed.
 
 ## :sparkles: Features ##
 
