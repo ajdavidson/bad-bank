@@ -137,7 +137,7 @@ function Login() {
                 ) : (
                   <>
 
-                    <h5><Spinner animation="border" /> Logging in as {ctx.loggedIn[0].name}...</h5>
+                    <h5><Spinner animation="border" style={{color:'green'}}/> Logging in as {ctx.loggedIn[0].name}...</h5>
                     {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
                     {/*<Button type="submit" variant="outline-secondary" onClick={clearForm}>Continue</Button>*/}
                   </>
