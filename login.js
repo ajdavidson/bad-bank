@@ -81,7 +81,7 @@ function Login() {
         <Row>
           <Col md={4}>
             {/*<h5>Logged In {JSON.stringify(ctx.users)}</h5>*/}
-            <Card style={{width: '400px'}}>
+            <Card style={{width: '400px',marginBottom:'10px'}}>
               <Card.Header><i className="fas fa-user"/> <b>Log In</b></Card.Header>
               <Card.Body>
                 <Card.Title>
@@ -147,49 +147,52 @@ function Login() {
             <div style={{position:'absolute', top:'0',right:'0'}}><h5><i className="fas fa-user-circle"/> {ctx.loggedIn[0].name}</h5></div>
           </Col>
         </Row>
+        <Row>
+        <Col md={8} style={{position:'relative'}}>
+          <h5><i className="fas fa-users-cog"/> Test Users</h5>
+          <Table striped hover style={{width: '500px',marginTop:'10px'}}>
+            <thead>
+            <tr>
+              <th>Level</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th style={{textAlign: 'center'}}><i className="fas fa-copy"/></th>
+            </tr>
+            </thead>
+            <tbody>
+            {ctx.users.slice(0, 4).map(t => (
+              <tr>
+                <td>{t.level}</td>
+                <td>{t.email}</td>
+                <td>{t.password}</td>
+                <td style={{textAlign: 'center'}}>
+                  <OverlayTrigger
+                    placement='right'
+                    overlay={
+                      <Tooltip>
+                        Click to fill in form <br/>with this users info<br/>{t.email} <br/> {t.password}
+                      </Tooltip>
+                    }
+                  >
+                    <Link style={{cursor: 'copy'}}
+                            onClick={() => {
+                              setEmail(t.email);
+                              setPassword(t.password)
+                            }}><i
+                      className="fas fa-copy"/></Link>
+                  </OverlayTrigger>
+                </td>
 
+              </tr>
+            ))}
+            </tbody>
+          </Table>
+        </Col>
+      </Row>
       </Container>
 
 
-      <br/>
-      <h5><i className="fas fa-users-cog"/> Test Users</h5>
-      <Table striped hover style={{width: '500px'}}>
-        <thead>
-        <tr>
-          <th>Level</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th style={{textAlign: 'center'}}><i className="fas fa-copy"/></th>
-        </tr>
-        </thead>
-        <tbody>
-        {ctx.users.slice(0, 4).map(t => (
-          <tr>
-            <td>{t.level}</td>
-            <td>{t.email}</td>
-            <td>{t.password}</td>
-            <td style={{textAlign: 'center'}}>
-              <OverlayTrigger
-                placement='right'
-                overlay={
-                  <Tooltip>
-                    Click to fill in form <br/>with this users info<br/>{t.email} <br/> {t.password}
-                  </Tooltip>
-                }
-              >
-                <Button type="submit" variant="outline-*" style={{cursor: 'copy'}}
-                        onClick={() => {
-                          setEmail(t.email);
-                          setPassword(t.password)
-                        }}><i
-                  className="fas fa-copy"/></Button>
-              </OverlayTrigger>
-            </td>
 
-          </tr>
-        ))}
-        </tbody>
-      </Table>
     </React.Fragment>
   )
 }
