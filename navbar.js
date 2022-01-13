@@ -49,7 +49,7 @@ function NavBar() {
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item onClick={logOut}>Log Out</Dropdown.Item>
+                  <Dropdown.Item onClick={logOut}><i className="fas fa-sign-out-alt"/> Log Out</Dropdown.Item>
                   <Dropdown.Divider/>
                   <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color:'red'}}/> Warning<br/>- Clears All Data<br/>- Clears Local Storage<br/>- Resets Simulator</Dropdown.Header>
                 </Dropdown.Menu>
@@ -61,7 +61,7 @@ function NavBar() {
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item onClick={logOut}>Log Out</Dropdown.Item>
+                  <Dropdown.Item onClick={logOut}><i className="fas fa-sign-out-alt"/> Log Out</Dropdown.Item>
                   <Dropdown.Divider/>
                   <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color:'red'}}/> Warning<br/>- Clears All Data<br/>- Clears Local Storage<br/>- Resets Simulator</Dropdown.Header>
                 </Dropdown.Menu>

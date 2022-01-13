@@ -129,7 +129,8 @@ function Login() {
 
                     {name !== '' || email !== '' || password !== '' ? (
                       // <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
-                      <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Log In</Button>
+                      <Button type="submit" variant="outline-secondary" onClick={handleCreate}><i
+  className="fas fa-sign-in-alt"/> Log In</Button>
                     ) : (
                       <Button type="submit" variant="light" disabled>Fill in Form Info</Button>
                     )}
