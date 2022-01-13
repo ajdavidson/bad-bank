@@ -74,9 +74,9 @@ function NavBar() {
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
 
                 <Dropdown.Menu>
-                  <Dropdown.Header>Default User <br/>Cannot Log out</Dropdown.Header>
+                  <Dropdown.Header>Clears All Data<br/>Clears Local Storage<br/>Resets Simulator</Dropdown.Header>
                   <Dropdown.Divider />
-                  <Dropdown.Item disabled>Log Out</Dropdown.Item>
+                  <Dropdown.Item onClick={logOut}>Log Out</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               )}
