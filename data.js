@@ -1,7 +1,33 @@
 function Data() {
   const ctx = React.useContext(UserContext);
+
+
+
+
+  var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
+
+  console.log('From Local Storage', {storedCTX});
+  //console.log('Last Log In ', storedCTX.loggedIn[0].name)
+
+
   return (
+
     <>
+      {console.log('Set Data ', {storedCTX})}
+      {storedCTX !== null ? (
+          <UserContext.Provider value={storedCTX}>
+            <div className="container" style={{padding: "20px"}}>
+              <Route path="/" exact component={Home}/>
+              <Route path="/CreateAccount/" component={CreateAccount}/>
+              <Route path="/login/" component={Login}/>
+              <Route path="/deposit/" component={Deposit}/>
+              <Route path="/withdraw/" component={Withdraw}/>
+              <Route path="/balance/" component={Balance}/>
+              <Route path="/alldata/" component={AllData}/>
+            </div>
+          </UserContext.Provider>
+
+      ):(
   <UserContext.Provider value={{
     users: [
       {
@@ -105,6 +131,7 @@ function Data() {
     }]
   }
   }>
+
     <div className="container" style={{padding: "20px"}}>
       <Route path="/" exact component={Home}/>
       <Route path="/CreateAccount/" component={CreateAccount}/>
@@ -115,6 +142,8 @@ function Data() {
       <Route path="/alldata/" component={AllData}/>
     </div>
   </UserContext.Provider>
+      )}
     </>
+
   )
 }

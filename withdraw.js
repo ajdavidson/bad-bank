@@ -52,7 +52,7 @@ function Withdraw() {
     });
     ctx.users[userID].balance = newBalance;
     ctx.loggedIn[0].balance = newBalance;
-
+    localStorage.setItem("ctx_data", JSON.stringify(ctx));
     setShow(false);
   }
 

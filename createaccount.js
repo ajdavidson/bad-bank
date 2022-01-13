@@ -42,6 +42,7 @@ function CreateAccount() {
     console.log(acct)
 
     ctx.users.push({acctNum: acct, level: 'User', name, email, password, balance: 100});
+    localStorage.setItem("ctx_data", JSON.stringify(ctx));
     setShow(false);
   }
 
@@ -49,6 +50,7 @@ function CreateAccount() {
     const resPwd = ctx.users.filter(p => p.password == password);
     console.log(resPwd);
     ctx.loggedIn = resPwd;
+    localStorage.setItem("ctx_data", JSON.stringify(ctx));
     //alert('Logged in as: ' + ctx.loggedIn[0].name);
     clearForm();
   }
