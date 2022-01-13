@@ -49,9 +49,15 @@ function NavBar() {
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
 
                 <Dropdown.Menu>
+                  <Dropdown.Item><i className="fas fa-id-card"/> #{storedCTX.loggedIn[0].acctNum}</Dropdown.Item>
+                  <Dropdown.Item><i className="fas fa-balance-scale"/> ${storedCTX.loggedIn[0].balance}</Dropdown.Item>
+                  <Dropdown.Header>
+                    <span>{storedCTX.loggedIn[0].email} </span> </Dropdown.Header>
+                  <Dropdown.Divider/>
                   <Dropdown.Item onClick={logOut}><i className="fas fa-sign-out-alt"/> Log Out</Dropdown.Item>
                   <Dropdown.Divider/>
-                  <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color:'red'}}/> Warning<br/>- Clears All Data<br/>- Clears Local Storage<br/>- Resets Simulator</Dropdown.Header>
+                  <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
+                    Clears All Data<br/>- Clears Local Storage<br/>- Resets Simulator</Dropdown.Header>
                 </Dropdown.Menu>
               </Dropdown>
             ) : (
@@ -61,9 +67,13 @@ function NavBar() {
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
 
                 <Dropdown.Menu>
+                  <Dropdown.Item><i className="fas fa-id-card"/> #990011001</Dropdown.Item>
+                  <Dropdown.Item><i className="fas fa-balance-scale"/> $1337</Dropdown.Item>
+                  <Dropdown.Divider/>
                   <Dropdown.Item onClick={logOut}><i className="fas fa-sign-out-alt"/> Log Out</Dropdown.Item>
                   <Dropdown.Divider/>
-                  <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color:'red'}}/> Warning<br/>- Clears All Data<br/>- Clears Local Storage<br/>- Resets Simulator</Dropdown.Header>
+                  <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
+                    Clears All Data<br/>- Clears Local Storage<br/>- Resets Simulator</Dropdown.Header>
                 </Dropdown.Menu>
               </Dropdown>
             )}

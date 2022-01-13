@@ -23,7 +23,6 @@ function Withdraw() {
     if (!validate(withdrawAmt, 'Enter a Number greater than Zero')) return;
 
 
-
     function find(arr) {
       for (var i = 0; i < arr.length; i++) {
         if (arr[i].email === ctx.loggedIn[0].email) {
@@ -75,9 +74,11 @@ function Withdraw() {
                   {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
 
                 </Card.Title>
-                <Card.Subtitle><br/><h5><i className="fas fa-balance-scale"/> Balance:
-                  ${JSON.stringify(ctx.loggedIn[0].balance)}
-                </h5></Card.Subtitle>
+                <Card.Subtitle><br/>
+                  <h5><i className="fas fa-balance-scale"/> Balance:
+                    ${JSON.stringify(ctx.loggedIn[0].balance)}
+                  </h5>
+                </Card.Subtitle>
                 {show ? (
                   <>
                     <br/>

@@ -2,9 +2,14 @@ function Home() {
 
   const ctx = React.useContext(UserContext);
 
-  // if (localStorage.getItem("ctx_data") === null) {
-  //   localStorage.setItem("ctx_data", JSON.stringify(ctx));
-  // }
+  if (localStorage.getItem("ctx_data") === null) {
+    localStorage.setItem("ctx_data", JSON.stringify(ctx));
+
+    // const history = useHistory();
+    // console.log(history);
+    // history.push("/");
+    //window.location.reload(true)
+  }
   //
   // var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
   //
