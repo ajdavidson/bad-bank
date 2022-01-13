@@ -53,6 +53,7 @@ function CreateAccount() {
     localStorage.setItem("ctx_data", JSON.stringify(ctx));
     //alert('Logged in as: ' + ctx.loggedIn[0].name);
     clearForm();
+    window.location.reload(true);
   }
 
   function clearForm() {
