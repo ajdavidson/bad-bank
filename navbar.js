@@ -70,6 +70,8 @@ function NavBar() {
                   <Dropdown.Item><i className="fas fa-id-card"/> #990011001</Dropdown.Item>
                   <Dropdown.Item><i className="fas fa-balance-scale"/> $1337</Dropdown.Item>
                   <Dropdown.Divider/>
+                  <Dropdown.Header style={{color:'green'}}>norman.osborn@oscorp.io</Dropdown.Header>
+                  <Dropdown.Divider/>
                   <Dropdown.Item onClick={logOut}><i className="fas fa-sign-out-alt"/> Log Out</Dropdown.Item>
                   <Dropdown.Divider/>
                   <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
