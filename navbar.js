@@ -51,8 +51,8 @@ function NavBar() {
                 <Dropdown.Menu>
                   <Dropdown.Item><i className="fas fa-id-card"/> #{storedCTX.loggedIn[0].acctNum}</Dropdown.Item>
                   <Dropdown.Item><i className="fas fa-balance-scale"/> ${storedCTX.loggedIn[0].balance}</Dropdown.Item>
-                  <Dropdown.Header>
-                    <span>{storedCTX.loggedIn[0].email} </span> </Dropdown.Header>
+                  <Dropdown.Divider/>
+                  <Dropdown.Header style={{color:'green'}}>{storedCTX.loggedIn[0].email}</Dropdown.Header>
                   <Dropdown.Divider/>
                   <Dropdown.Item onClick={logOut}><i className="fas fa-sign-out-alt"/> Log Out</Dropdown.Item>
                   <Dropdown.Divider/>
