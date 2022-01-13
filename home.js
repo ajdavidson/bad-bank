@@ -1,5 +1,16 @@
 function Home() {
+
   const ctx = React.useContext(UserContext);
+
+  if (localStorage.getItem("ctx_data") === null) {
+    localStorage.setItem("ctx_data", JSON.stringify(ctx));
+  }
+
+  var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
+
+  console.log('From Local Storage', {storedCTX});
+  console.log('Last Log In ', storedCTX.loggedIn[0].name)
+
   return (
     <React.Fragment>
       <Container>

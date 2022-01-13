@@ -7,14 +7,6 @@ function Login() {
   const ctx = React.useContext(UserContext);
 
   const [passwordShown, setPasswordShown] = React.useState(false);
-  // const res = ctx.users.filter(p => p.email == "richard.parker@oscorp.io")
-  // console.log(res)
-  //
-  // if(res.length !== 0){
-  //   alert("Value exists!")
-  // } else{
-  //   alert("Value does not exists!")
-  // }
 
   //
   function validate(field, label) {
@@ -57,7 +49,12 @@ function Login() {
       return;
     }
     //ctx.users.push({ level: 'Standard User', name, email, password, balance: 100 });
+    var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
+    console.log('From Local Storage', {storedCTX});
+    console.log('Log Out ', storedCTX.loggedIn[0].name)
+    //console.log('Last Log In ', resEmail[0].name)
     ctx.loggedIn = resPwd
+    localStorage.setItem("ctx_data", JSON.stringify(ctx));
     setShow(false);
   }
 
@@ -81,7 +78,7 @@ function Login() {
         <Row>
           <Col md={4}>
             {/*<h5>Logged In {JSON.stringify(ctx.users)}</h5>*/}
-            <Card style={{width: '400px'}}>
+            <Card style={{width: '400px',marginBottom:'10px'}}>
               <Card.Header><i className="fas fa-user"/> <b>Log In</b></Card.Header>
               <Card.Body>
                 <Card.Title>
@@ -147,49 +144,57 @@ function Login() {
             <div style={{position:'absolute', top:'0',right:'0'}}><h5><i className="fas fa-user-circle"/> {ctx.loggedIn[0].name}</h5></div>
           </Col>
         </Row>
+        <Row>
+        <Col md={8} style={{position:'relative'}}>
+          <h5><i className="fas fa-users-cog"/> Test Users</h5>
+          <Table striped hover style={{width: '500px',marginTop:'10px'}}>
+            <thead>
+            <tr>
+              <th>Level</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th style={{textAlign: 'center'}}><i className="fas fa-copy"/></th>
+            </tr>
+            </thead>
+            <tbody>
+            {ctx.users.slice(0, 4).map((t, index) => (
+              <tr style={{cursor: 'copy'}}
+                  key={index}
+                  onClick={() => {
+                    setEmail(t.email);
+                    setPassword(t.password)
+                  }}>
+                <td>{t.level}</td>
+                <td>{t.email}</td>
+                <td>{t.password}</td>
+                <td style={{textAlign: 'center'}}>
+                  <OverlayTrigger
+                    placement='right'
+                    overlay={
+                      <Tooltip>
+                        Click to fill in form <br/>with this users info<br/>{t.email} <br/> {t.password}
+                      </Tooltip>
+                    }
+                  >
+                    <Link style={{cursor: 'copy'}}
+                            onClick={() => {
+                              setEmail(t.email);
+                              setPassword(t.password)
+                            }}><i
+                      className="fas fa-copy"/></Link>
+                  </OverlayTrigger>
+                </td>
 
+              </tr>
+            ))}
+            </tbody>
+          </Table>
+        </Col>
+      </Row>
       </Container>
 
 
-      <br/>
-      <h5><i className="fas fa-users-cog"/> Test Users</h5>
-      <Table striped hover style={{width: '500px'}}>
-        <thead>
-        <tr>
-          <th>Level</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th style={{textAlign: 'center'}}><i className="fas fa-copy"/></th>
-        </tr>
-        </thead>
-        <tbody>
-        {ctx.users.slice(0, 4).map(t => (
-          <tr>
-            <td>{t.level}</td>
-            <td>{t.email}</td>
-            <td>{t.password}</td>
-            <td style={{textAlign: 'center'}}>
-              <OverlayTrigger
-                placement='right'
-                overlay={
-                  <Tooltip>
-                    Click to fill in form <br/>with this users info<br/>{t.email} <br/> {t.password}
-                  </Tooltip>
-                }
-              >
-                <Button type="submit" variant="outline-*" style={{cursor: 'copy'}}
-                        onClick={() => {
-                          setEmail(t.email);
-                          setPassword(t.password)
-                        }}><i
-                  className="fas fa-copy"/></Button>
-              </OverlayTrigger>
-            </td>
 
-          </tr>
-        ))}
-        </tbody>
-      </Table>
     </React.Fragment>
   )
 }
