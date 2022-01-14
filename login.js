@@ -211,7 +211,7 @@ function Login() {
           backdrop="static"
           keyboard={false}
         >
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title><i className="fas fa-check-circle"/> Success</Modal.Title>
           </Modal.Header>
           <Modal.Body style={{textAlign:'center'}}>
