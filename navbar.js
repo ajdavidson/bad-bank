@@ -20,13 +20,7 @@ function NavBar() {
   }
 
   return (
-    <Container style={{
-      // marginBottom: '0',
-      // paddingBottom: '0',
-      // borderRadius: '0 0 20px 20px',
-      //boxShadow: '3px 0px 3px 0px #000000'
-    }}>
-
+    <Container>
 
       <Navbar bg="light" variant="light" expand="lg"
               style={{
@@ -100,7 +94,7 @@ function NavBar() {
                       placement='left'
                       overlay={
                         <Tooltip>
-                          <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
+                          <i className="fas fa-exclamation-triangle" style={{color: 'yellow'}}/> Warning<br/>-
                           Clears All Data -<br/>- Clears Local Storage -<br/>- Resets Simulator -
                         </Tooltip>
                       }
@@ -151,7 +145,7 @@ function NavBar() {
                       placement='left'
                       overlay={
                         <Tooltip>
-                          <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
+                          <i className="fas fa-exclamation-triangle" style={{color: 'yellow'}}/> Warning<br/>-
                           Clears All Data -<br/>- Clears Local Storage -<br/>- Resets Simulator -
                         </Tooltip>
                       }
