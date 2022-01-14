@@ -214,7 +214,7 @@ function Login() {
           <Modal.Header closeButton>
             <Modal.Title><i className="fas fa-check-circle"/> Success</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{textAlign:'center'}}>
             <h5><i className="fas fa-cog fa-spin fa-lg"/> Logging in {ctx.loggedIn[0].name}...</h5>
           </Modal.Body>
           {/*<Modal.Footer>*/}
