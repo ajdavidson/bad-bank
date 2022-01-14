@@ -34,7 +34,7 @@ function NavBar() {
         <Navbar.Brand style={{paddingLeft: '15px'}}><i className="fas fa-globe" style={{color: "green"}}/> <b>Globalin
           Bank</b></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" style={{color: 'green', border:'0'}}/>
-        <Navbar.Collapse id="basic-navbar-nav" style={{color: 'green'}}>
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" fill variant="tabs" defaultActiveKey="#/">
             {/*Build NAVBAR */}
             {navBuild.map((n, index) => (
