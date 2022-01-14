@@ -33,7 +33,7 @@ function NavBar() {
                 marginBottom: '0',
                 paddingBottom: '0',
                 borderRadius: '0 0 20px 20px',
-                boxShadow: 'inset 0px 1px 2px 1px #000000'
+                boxShadow: 'inset 1px 0px .5px 2px #C8C8C8'
                 // textShadow: '1px 1px 0px 0px #000000'
               }} sticky="top">
 
