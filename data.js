@@ -34,7 +34,7 @@ function Data() {
     users: [
       {
         acctNum: 990011001,
-        level: 'Admin',
+        level: 'Administrator',
         name: 'Norman Osborn',
         email: 'norman.osborn@oscorp.io',
         password: 'M3p#1$t0',
@@ -58,7 +58,7 @@ function Data() {
       },
       {
         acctNum: 990029414,
-        level: 'User',
+        level: 'Individual',
         name: 'Eugene Thompson',
         email: 'e.thompson@flash.io',
         password: '@g3nTv3n0m',
@@ -125,7 +125,7 @@ function Data() {
     ],
     loggedIn: [{
       acctNum: 990011001,
-      level: 'Admin',
+      level: 'Administrator',
       name: 'Norman Osborn',
       email: 'norman.osborn@oscorp.io',
       password: 'M3p#1$t0',

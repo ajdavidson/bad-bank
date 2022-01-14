@@ -70,7 +70,7 @@ function AllData() {
                   </Table>
                 </>
               )}
-              {(ctx.loggedIn[0].level !== 'User') &&
+              {(ctx.loggedIn[0].level !== 'Individual') &&
 
               <>
                 {console.log('Users ', ctx.users)}

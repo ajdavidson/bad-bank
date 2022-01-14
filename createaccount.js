@@ -41,7 +41,7 @@ function CreateAccount() {
     let acct = '9900' + (Math.floor(Math.random() * 90000) + 10000);
     console.log(acct)
 
-    ctx.users.push({acctNum: acct, level: 'User', name, email, password, balance: 100});
+    ctx.users.push({acctNum: acct, level: 'Individual', name, email, password, balance: 100});
     localStorage.setItem("ctx_data", JSON.stringify(ctx));
     setShow(false);
   }

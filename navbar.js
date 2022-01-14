@@ -77,11 +77,11 @@ function NavBar() {
                       placement='left'
                       overlay={
                         <Tooltip>
-                          Current Balance
+                          Account Type
                         </Tooltip>
                       }
                     >
-                      <Nav.Item><i className="fas fa-balance-scale"/> ${storedCTX.loggedIn[0].balance}</Nav.Item>
+                      <Nav.Item><i className="fas fa-user-shield"/> {storedCTX.loggedIn[0].level}</Nav.Item>
                     </OverlayTrigger>
                   </Dropdown.Item>
 
@@ -129,11 +129,11 @@ function NavBar() {
                       placement='left'
                       overlay={
                         <Tooltip>
-                          Current Balance
+                          Account Type
                         </Tooltip>
                       }
                     >
-                      <Nav.Item><i className="fas fa-balance-scale"/> $1337</Nav.Item>
+                      <Nav.Item><i className="fas fa-user-shield"/> Administrator</Nav.Item>
                     </OverlayTrigger>
 
                   </Dropdown.Item>
