@@ -50,8 +50,8 @@ function AllData() {
                     <thead>
                     <tr>
                       <th>User ID</th>
-                      <th>Type</th>
                       <th>Date / Time</th>
+                      <th>Type</th>
                       <th>Amount</th>
                       <th>Balance</th>
                     </tr>
@@ -60,8 +60,8 @@ function AllData() {
                     {res.map((t, index) => (
                       <tr key={index}>
                         <td>{t.userID}</td>
-                        <td>{t.type}</td>
                         <td>{t.datetime}</td>
+                        <td>{t.type}</td>
                         <td>${t.amount}</td>
                         <td>${t.balance}</td>
                       </tr>
