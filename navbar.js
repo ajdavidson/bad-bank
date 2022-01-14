@@ -44,7 +44,7 @@ function NavBar() {
                 </OverlayTrigger>
               ))}
             </Nav>
-            <Navbar.Brand>
+            <Navbar.Brand style={{paddingBottom: '0'}}>
             {storedCTX !== null ? (
               <Dropdown as={ButtonGroup} >
                 <Button variant="outline-*"><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</Button>
