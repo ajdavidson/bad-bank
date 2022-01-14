@@ -20,8 +20,10 @@ function NavBar() {
   }
 
   return (
-    <>
-      <Navbar bg="light" variant="light" expand="lg" style={{marginBottom: '0', paddingBottom: '0'}} sticky="top">
+    <Container>
+
+
+      <Navbar bg="light" variant="light" expand="lg" style={{marginBottom: '0', paddingBottom: '0',borderRadius: '33% 33% 0 0'}} sticky="top">
         <Container>
           <Navbar.Brand><i className="fas fa-globe" style={{color: "green"}}/> <b>Globalin Bank</b></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
@@ -42,8 +44,9 @@ function NavBar() {
                 </OverlayTrigger>
               ))}
             </Nav>
+            <Navbar.Brand>
             {storedCTX !== null ? (
-              <Dropdown as={ButtonGroup} style={{position: 'absolute', top: '10px', right: '10px'}}>
+              <Dropdown as={ButtonGroup} >
                 <Button variant="outline-*"><i className="fas fa-user-circle"/> {storedCTX.loggedIn[0].name}</Button>
 
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
@@ -61,7 +64,7 @@ function NavBar() {
                 </Dropdown.Menu>
               </Dropdown>
             ) : (
-              <Dropdown as={ButtonGroup} style={{position: 'absolute', top: '10px', right: '10px'}}>
+              <Dropdown as={ButtonGroup} >
                 <Button variant="outline-*"><i className="fas fa-user-circle"/> Norman Osborn</Button>
 
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
@@ -79,9 +82,10 @@ function NavBar() {
                 </Dropdown.Menu>
               </Dropdown>
             )}
+            </Navbar.Brand>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </>
+</Container>
   );
 }
