@@ -17,7 +17,7 @@ function AllData() {
               <br/>
               {/* */}
               <h5><i className="fas fa-user"/> Account ( {ctx.loggedIn[0].acctNum} )</h5>
-              <Table striped hover>
+              <Table striped hover responsive>
                 <thead>
                 <tr>
                   <th>Level</th>
@@ -46,7 +46,7 @@ function AllData() {
                   {/*  */}
                   <br/>
                   <h5><i className="fas fa-chart-bar"/> Transactions ( {ctx.loggedIn[0].acctNum} )</h5>
-                  <Table striped hover>
+                  <Table striped hover responsive>
                     <thead>
                     <tr>
                       <th>User ID</th>
@@ -77,7 +77,7 @@ function AllData() {
                 {/* */}
                 <br/>
                 <h5><i className="fas fa-users"/> All Users (Viewing as {ctx.loggedIn[0].level})</h5>
-                <Table striped hover>
+                <Table striped hover responsive>
                   <thead>
                   <tr>
                     <th>Account #</th>
@@ -111,8 +111,6 @@ function AllData() {
         {/*  <div style={{position: 'absolute', top: '0', right: '0'}}><h5><i className="fas fa-user-circle"/> {ctx.loggedIn[0].name}</h5></div>*/}
         {/*</Col>*/}
       </Row>
-
-
 
 </Container>
 
