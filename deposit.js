@@ -10,6 +10,15 @@ function Deposit() {
       setTimeout(() => setStatus(''), 3000);
       return false;
     }
+    let pattern = /^\d+$/;
+    let result = pattern.test(field);
+
+    if (!result){
+      //alert('not a valid number')
+      setStatus('Invalid type of Number');
+      setTimeout(() => setStatus(''), 3000);
+      return false;
+    }
     return true;
   }
 

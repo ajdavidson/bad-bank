@@ -82,7 +82,7 @@ function CreateAccount() {
                   &nbsp;
                   {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
                 </Card.Title>
-                {ctx.loggedIn[0].level === 'Admin' ? (
+                {ctx.loggedIn[0].level === 'Administrator' ? (
                   <>
                     {show ? (
                       <>
@@ -148,7 +148,7 @@ function CreateAccount() {
                         {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
                         <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another
                           account</Button>{'  '}
-                        <Button type="submit" variant="outline-secondary" onClick={logInNow}>Log in?</Button>
+                        {/*<Button type="submit" variant="outline-secondary" onClick={logInNow}>Log in?</Button>*/}
                       </>
                     )}
                   </>
