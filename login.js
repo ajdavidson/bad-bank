@@ -7,7 +7,10 @@ function Login() {
   const ctx = React.useContext(UserContext);
 
   const [passwordShown, setPasswordShown] = React.useState(false);
+  const [showMod, setShowMod] = React.useState(false);
 
+  const handleClose = () => setShowMod(false);
+  const handleShow = () => setShowMod(true);
   //
   function validate(field, label) {
     if (!field) {
@@ -20,7 +23,7 @@ function Login() {
 
   function handleCreate() {
     console.log(email, password);
-
+    handleShow()
     //
     const resEmail = ctx.users.filter(p => p.email == email)
     console.log(resEmail)
@@ -138,7 +141,8 @@ function Login() {
                 ) : (
                   <>
 
-                    <h5><i className="fas fa-cog fa-spin fa-lg"/> Logging in {ctx.loggedIn[0].name}...</h5>
+                    {/*<h5><i className="fas fa-cog fa-spin fa-lg"/> Logging in {ctx.loggedIn[0].name}...</h5>*/}
+                    <h5><i className="fas fa-hourglass-half"/> Please Wait...</h5>
                     {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
                     {/*<Button type="submit" variant="outline-secondary" onClick={clearForm}>Continue</Button>*/}
                   </>
@@ -200,6 +204,27 @@ function Login() {
           </Table>
         </Col>
       </Row>
+
+        <Modal
+          show={showMod}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title><i className="fas fa-check-circle"/> Success</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h5><i className="fas fa-cog fa-spin fa-lg"/> Logging in {ctx.loggedIn[0].name}...</h5>
+          </Modal.Body>
+          {/*<Modal.Footer>*/}
+          {/*  <Button variant="secondary" onClick={handleClose}>*/}
+          {/*    Close*/}
+          {/*  </Button>*/}
+          {/*  <Button variant="primary">Understood</Button>*/}
+          {/*</Modal.Footer>*/}
+        </Modal>
+
       </Container>
 
 

@@ -19,7 +19,8 @@ const {
   Form,
   Spinner,
   Dropdown,
-  ButtonGroup
+  ButtonGroup,
+  Modal
 } = ReactBootstrap;
 
 // function Card(props){
