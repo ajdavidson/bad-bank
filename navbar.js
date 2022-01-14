@@ -65,15 +65,49 @@ function NavBar() {
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item><i className="fas fa-id-card"/> #{storedCTX.loggedIn[0].acctNum}</Dropdown.Item>
-                  <Dropdown.Item><i className="fas fa-balance-scale"/> ${storedCTX.loggedIn[0].balance}</Dropdown.Item>
+                  <Dropdown.Item>
+
+                    <OverlayTrigger
+                      placement='left'
+                      overlay={
+                        <Tooltip>
+                          Account Number
+                        </Tooltip>
+                      }
+                    >
+                      <Nav.Item><i className="fas fa-id-card"/> #{storedCTX.loggedIn[0].acctNum}</Nav.Item>
+                    </OverlayTrigger>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <OverlayTrigger
+                      placement='left'
+                      overlay={
+                        <Tooltip>
+                          Current Balance
+                        </Tooltip>
+                      }
+                    >
+                      <Nav.Item><i className="fas fa-balance-scale"/> ${storedCTX.loggedIn[0].balance}</Nav.Item>
+                    </OverlayTrigger>
+                  </Dropdown.Item>
+
                   <Dropdown.Divider/>
                   <Dropdown.Header style={{color: 'green'}}>{storedCTX.loggedIn[0].email}</Dropdown.Header>
+
                   <Dropdown.Divider/>
-                  <Dropdown.Item onClick={logOut}><i className="fas fa-sign-out-alt"/> Log Out</Dropdown.Item>
-                  <Dropdown.Divider/>
-                  <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
-                    Clears All Data<br/>- Clears Local Storage<br/>- Resets Simulator</Dropdown.Header>
+                  <Dropdown.Item onClick={logOut}>
+                    <OverlayTrigger
+                      placement='left'
+                      overlay={
+                        <Tooltip>
+                          <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
+                          Clears All Data -<br/>- Clears Local Storage -<br/>- Resets Simulator -
+                        </Tooltip>
+                      }
+                    >
+                      <Nav.Item><i className="fas fa-sign-out-alt"/> Log Out</Nav.Item>
+                    </OverlayTrigger>
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             ) : (
@@ -83,15 +117,48 @@ function NavBar() {
                 <Dropdown.Toggle split variant="outline" id="dropdown-split-basic"/>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item><i className="fas fa-id-card"/> #990011001</Dropdown.Item>
-                  <Dropdown.Item><i className="fas fa-balance-scale"/> $1337</Dropdown.Item>
+                  <Dropdown.Item>
+
+                    <OverlayTrigger
+                      placement='left'
+                      overlay={
+                        <Tooltip>
+                          Account Number
+                        </Tooltip>
+                      }
+                    >
+                      <Nav.Item><i className="fas fa-id-card"/> #990011001</Nav.Item>
+                    </OverlayTrigger>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <OverlayTrigger
+                      placement='left'
+                      overlay={
+                        <Tooltip>
+                          Current Balance
+                        </Tooltip>
+                      }
+                    >
+                      <Nav.Item><i className="fas fa-balance-scale"/> $1337</Nav.Item>
+                    </OverlayTrigger>
+
+                  </Dropdown.Item>
                   <Dropdown.Divider/>
                   <Dropdown.Header style={{color: 'green'}}>norman.osborn@oscorp.io</Dropdown.Header>
                   <Dropdown.Divider/>
-                  <Dropdown.Item onClick={logOut}><i className="fas fa-sign-out-alt"/> Log Out</Dropdown.Item>
-                  <Dropdown.Divider/>
-                  <Dropdown.Header><i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
-                    Clears All Data<br/>- Clears Local Storage<br/>- Resets Simulator</Dropdown.Header>
+                  <Dropdown.Item onClick={logOut}>
+                    <OverlayTrigger
+                      placement='left'
+                      overlay={
+                        <Tooltip>
+                          <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/> Warning<br/>-
+                          Clears All Data -<br/>- Clears Local Storage -<br/>- Resets Simulator -
+                        </Tooltip>
+                      }
+                    >
+                      <Nav.Item><i className="fas fa-sign-out-alt"/> Log Out</Nav.Item>
+                    </OverlayTrigger>
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             )}
