@@ -9,7 +9,7 @@ function AllData() {
   console.table(res)
 
   return (
-    <Container fluid >
+    <Container fluid={'lg'} >
       <Row sm={12} md={12}>
         <Col sm={12} md={12}>
           <Card style={{width: '100%'}}>
