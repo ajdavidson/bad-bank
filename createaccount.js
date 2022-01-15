@@ -71,11 +71,10 @@ function CreateAccount() {
 
   return (
     <React.Fragment>
-      <Container>
-        <Row>
-          <Col md={4}>
-
-            <Card style={{width: '400px'}}>
+      <Container fluid={'lg'} >
+        <Row sm={12} md={12} lg={4}>
+          <Col sm={12} md={12} lg={4}>
+            <Card style={{width: '100%'}}>
               <Card.Header><i className="fas fa-id-card"/> <b>Create Account</b></Card.Header>
               <Card.Body>
                 <Card.Title>

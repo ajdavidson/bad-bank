@@ -80,11 +80,10 @@ function Login() {
 
   return (
     <React.Fragment>
-      <Container>
-        <Row>
-          <Col md={4}>
-            {/*<h5>Logged In {JSON.stringify(ctx.users)}</h5>*/}
-            <Card style={{width: '400px',marginBottom:'10px'}}>
+      <Container fluid={'lg'} >
+        <Row sm={12} md={12} lg={4}>
+          <Col sm={12} md={12} lg={4}>
+            <Card style={{width: '100%'}}>
               <Card.Header><i className="fas fa-user"/> <b>Log In</b></Card.Header>
               <Card.Body>
                 <Card.Title>
@@ -156,10 +155,10 @@ function Login() {
           {/*  <div style={{position:'absolute', top:'0',right:'0'}}><h5><i className="fas fa-user-circle"/> {ctx.loggedIn[0].name}</h5></div>*/}
           {/*</Col>*/}
         </Row>
-        <Row>
-        <Col md={8} style={{position:'relative'}}>
+        <Row sm={12} md={12} lg={4}>
+          <Col sm={12} md={12} lg={4}>
           <h5><i className="fas fa-users-cog"/> Test Users</h5>
-          <Table striped hover style={{width: '500px',marginTop:'10px'}}>
+          <Table striped hover style={{marginTop:'10px'}}>
             <thead>
             <tr>
               <th>Level</th>
