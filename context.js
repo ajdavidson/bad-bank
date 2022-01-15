@@ -20,7 +20,8 @@ const {
   Spinner,
   Dropdown,
   ButtonGroup,
-  Modal
+  Modal,
+  CardGroup
 } = ReactBootstrap;
 
 // function Card(props){

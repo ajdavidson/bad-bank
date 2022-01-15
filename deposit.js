@@ -13,7 +13,7 @@ function Deposit() {
     let pattern = /^\d+$/;
     let result = pattern.test(field);
 
-    if (!result){
+    if (!result) {
       //alert('not a valid number')
       setStatus('Invalid type of Number');
       setTimeout(() => setStatus(''), 3000);
@@ -41,10 +41,45 @@ function Deposit() {
     const userID = find(ctx.users)
     console.log(userID);
 
+    // 
+    var d = new Date();
+
+    var hours = d.getUTCHours();
+    var min = d.getUTCMinutes(); // 
+    var sec = d.getUTCSeconds();
+
+
+    var date = d.getUTCDate();
+    var month = d.getUTCMonth() + 1; // Since getUTCMonth() returns month from 0-11 not 1-12
+    var year = d.getUTCFullYear();
+
+    var dateStr = month + "/" + date + "/" + year;
+    console.log(dateStr)
+    var timeStr = hours + ":" + min + ":" + sec;
+    console.log(timeStr)
+
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    var day = days[d.getDay()];
+    console.log(day)
+    var strDay = day.substring(0, 3);
+    console.log(strDay)
+
+
+    var month = months[d.getMonth()];
+    console.log(month)
+
+    const setXDate = strDay + ', ' + dateStr + ' ' + timeStr;
+    console.log(setXDate)
+
+    // 
+
+
     ctx.xaction.push({
       userID: ctx.loggedIn[0].email,
       type: 'Deposit',
-      datetime: dtm.toUTCString(),
+      datetime: setXDate,
       amount: Number(Math.trunc(depositAmt)),
       balance: newBalance
     });
@@ -64,25 +99,25 @@ function Deposit() {
       <Container>
         <Row>
           <Col md={4}>
-            <Card style={{width: '400px'}}>
-              <Card.Header><i className="fas fa-balance-scale-left"/> <b>Deposit</b></Card.Header>
+            <Card style={{ width: '400px' }}>
+              <Card.Header><i className="fas fa-balance-scale-left" /> <b>Deposit</b></Card.Header>
               <Card.Body>
                 <Card.Title>
                   &nbsp;
-                  {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
+                  {status !== '' && <i className="fas fa-exclamation-triangle" style={{ color: 'red' }} />} {status}
                 </Card.Title>
-                <Card.Subtitle><br/><h5><i className="fas fa-balance-scale"/> Balance:
+                <Card.Subtitle><br /><h5><i className="fas fa-balance-scale" /> Balance:
                   ${JSON.stringify(ctx.loggedIn[0].balance)}
                 </h5></Card.Subtitle>
                 {show ? (
                   <>
-                    <br/>
+                    <br />
                     {/* <input type="input" className="form-control" id="depositAmt" placeholder="Enter deposit amount" value={depositAmt} onChange={e => setDepositAmt(e.currentTarget.value)} /><br /> */}
                     <InputGroup className="mb-3">
                       <InputGroup.Text>$</InputGroup.Text>
                       <FormControl aria-label="Amount (to the nearest dollar)" id="depositAmt"
-                                   placeholder="Enter a number greater than zero"
-                                   onChange={e => setDepositAmt(e.currentTarget.value)}/>
+                        placeholder="Enter a number greater than zero"
+                        onChange={e => setDepositAmt(e.currentTarget.value)} />
                       <InputGroup.Text>.00</InputGroup.Text>
                     </InputGroup>
                     {/* Email address<br />
@@ -100,7 +135,7 @@ function Deposit() {
                   </>
                 ) : (
                   <>
-                    <h5><i className="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
+                    <h5><i className="fas fa-check-circle" style={{ color: 'green' }} /> Success</h5>
                     {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Deposit</button> */}
                     <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another Deposit</Button>
                   </>
