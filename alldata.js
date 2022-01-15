@@ -12,7 +12,7 @@ function AllData() {
     <Container fluid >
       <Row sm={12} md={12}>
         <Col sm={12} md={12}>
-          <Card>
+          <Card style={{width: '100%'}}>
             <Card.Header><i className="fas fa-database" /> <b>All Data</b></Card.Header>
             <Card.Body>
               {/*<Card.Title><h3><i className="far fa-user-circle"/> Profile</h3></Card.Title>*/}
