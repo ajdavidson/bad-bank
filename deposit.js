@@ -70,9 +70,12 @@ function Deposit() {
     var month = months[d.getMonth()];
     //console.log(month)
 
-    const setXDate = strDay + ', ' + dateStr + ' ' + timeStr;
+    //const setXDate = strDay + ', ' + dateStr + ' ' + timeStr;
+    const setXDate = strDay + ', ' + d.toLocaleString('en-US', { timeZone: 'UTC' })
     console.log('Deposit Timestamp: ',setXDate)
 
+    // console.log(d.toLocaleString('en-US', { timeZone: 'UTC' }));
+    // console.log(strDay,',', d.toLocaleString('en-US', { timeZone: 'UTC' }));
     // 
 
 

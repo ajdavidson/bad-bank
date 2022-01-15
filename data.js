@@ -69,56 +69,56 @@ function Data() {
             {
               userID: 'norman.osborn@oscorp.io',
               type: 'Withdrawal',
-              datetime: 'Sat, 1/1/2022 01:41:22',
+              datetime: 'Sat, 1/1/2022, 1:41:22 PM',
               amount: 2220,
               balance: 13100
             },
             {
               userID: 'norman.osborn@oscorp.io',
               type: 'Deposit',
-              datetime: 'Sun, 1/2/2022 14:41:02',
+              datetime: 'Sun, 1/2/2022, 2:41:02 PM',
               amount: 237,
               balance: 13337
             },
             {
               userID: 'norman.osborn@oscorp.io',
               type: 'Withdrawal',
-              datetime: 'Mon, 1/3/2022 23:39:58',
+              datetime: 'Mon, 1/3/2022, 11:39:58 PM',
               amount: 10000,
               balance: 1337
             },
             {
               userID: 'richard.parker@oscorp.io',
               type: 'Deposit',
-              datetime: 'Sat, 1/1/2022 13:19:50',
+              datetime: 'Sat, 1/1/2022, 1:19:50 PM',
               amount: 220,
               balance: 700
             },
             {
               userID: 'richard.parker@oscorp.io',
               type: 'Deposit',
-              datetime: 'Mon, 1/3/2022 03:19:52',
+              datetime: 'Mon, 1/3/2022, 3:19:52 PM',
               amount: 400,
               balance: 1100
             },
             {
               userID: 'harry.osborn@oscorp.io',
               type: 'Withdrawal',
-              datetime: 'Sat, 1/1/2022 01:41:22',
+              datetime: 'Sat, 1/1/2022, 1:41:22 AM',
               amount: 2220,
               balance: 1000
             },
             {
               userID: 'harry.osborn@oscorp.io',
               type: 'Deposit',
-              datetime: 'Sun, 1/2/2022 14:41:02',
+              datetime: 'Sun, 1/2/2022, 2:41:02 AM',
               amount: 25,
               balance: 1025
             },
             {
               userID: 'harry.osborn@oscorp.io',
               type: 'Deposit',
-              datetime: 'Mon, 1/3/2022 11:11:12',
+              datetime: 'Mon, 1/3/2022, 11:11:12 PM',
               amount: 100,
               balance: 1225
             }

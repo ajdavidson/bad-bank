@@ -44,13 +44,6 @@ function Withdraw() {
     console.log(userID);
 
     const newBalance = Number(ctx.users[userID].balance) - Number(Math.trunc(withdrawAmt));
-    //var dtm = new Date();
-
-    if (withdrawAmt > ctx.users[userID].balance) {
-      setStatus('Amount exceeds balance');
-      setTimeout(() => setStatus(''), 3000);
-      return false;
-    }
 
     //
     var d = new Date();
@@ -81,9 +74,12 @@ function Withdraw() {
     var month = months[d.getMonth()];
     //console.log(month)
 
-    const setXDate = strDay + ', ' + dateStr + ' ' + timeStr;
+    //const setXDate = strDay + ', ' + dateStr + ' ' + timeStr;
+    const setXDate = strDay + ', ' + d.toLocaleString('en-US', { timeZone: 'UTC' })
     console.log('Withdrawal Timestamp: ',setXDate)
 
+    // console.log(d.toLocaleString('en-US', { timeZone: 'UTC' }));
+    // console.log(strDay,',', d.toLocaleString('en-US', { timeZone: 'UTC' }));
     //
 
     ctx.xaction.push({
