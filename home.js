@@ -4,17 +4,8 @@ function Home() {
 
   if (localStorage.getItem("ctx_data") === null) {
     localStorage.setItem("ctx_data", JSON.stringify(ctx));
-
-    // const history = useHistory();
-    // console.log(history);
-    // history.push("/");
-    //window.location.reload(true)
   }
-  //
-  // var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
-  //
-  // console.log('From Local Storage', {storedCTX});
-  // console.log('Last Log In ', storedCTX.loggedIn[0].name)
+
   console.log('Logged In...')
   console.table(ctx.loggedIn)
   return (
