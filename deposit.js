@@ -54,24 +54,24 @@ function Deposit() {
     var year = d.getUTCFullYear();
 
     var dateStr = month + "/" + date + "/" + year;
-    console.log(dateStr)
+    //console.log(dateStr)
     var timeStr = hours + ":" + min + ":" + sec;
-    console.log(timeStr)
+    //console.log(timeStr)
 
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     var day = days[d.getDay()];
-    console.log(day)
+    //console.log(day)
     var strDay = day.substring(0, 3);
-    console.log(strDay)
+    //console.log(strDay)
 
 
     var month = months[d.getMonth()];
-    console.log(month)
+    //console.log(month)
 
     const setXDate = strDay + ', ' + dateStr + ' ' + timeStr;
-    console.log(setXDate)
+    console.log('Deposit Timestamp: ',setXDate)
 
     // 
 

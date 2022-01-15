@@ -2,97 +2,103 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <title>Globalin Bank</title>
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <!-- bootstrap css -->
-<link rel="stylesheet" href="./css/5-1-3-bs.min.css" />
-<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"-->
-<!--    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />-->
+  <link rel="stylesheet" href="./css/5-1-3-bs.min.css"/>
+  <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"-->
+  <!--    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />-->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
-    integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <!-- don't use this in production: -->
-<!--  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
+  <!--  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
   <script src="./js/7-16-9-babel-min.js"></script>
 
   <style>
-    body {
-      background-image: url("./bad-back.jpg");
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-
-    html {
-      overflow-y: scroll;
-    }
-
-    #root {
-      animation: fadeInAnimation ease 3s;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-    }
-
-    @keyframes fadeInAnimation {
-      0% {
-        opacity: 0;
+      body {
+          background-image: url("./bad-back.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
       }
 
-      100% {
-        opacity: 1;
+      html {
+          overflow-y: scroll;
       }
-    }
 
-    i {
-      color: green;
-    }
+      #root {
+          animation: fadeInAnimation ease 3s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+      }
 
-    .c-user td {
+      @keyframes fadeInAnimation {
+          0% {
+              opacity: 0;
+          }
 
-      color: green !important;
-    }
+          100% {
+              opacity: 1;
+          }
+      }
 
-    .card-header {
-      font-size: 20px;
-    }
+      i {
+          color: green;
+      }
+
+      .c-user td {
+
+          color: green !important;
+      }
+
+      .card-header {
+          font-size: 20px;
+      }
   </style>
 </head>
 
 <body>
-  <!-- we will put our teact component inside this div -->
-  <div id="root"></div>
-  <!-- load react -->
+<!-- we will put our teact component inside this div -->
+<div id="root"></div>
+<!-- load react -->
+<!-- load local libraries -->
+<script src="./js/react-dev.js"></script>
+<script src="./js/react-dom-dev.js"></script>
+<script src="./js/5-2-1-react-router-min.js"></script>
+<script src="./js/5-2-1-react-router-dom-min.js"></script>
+<script src="./js/2-0-0-react-bootstrap-min.js"></script>
+
+<!--  -->
 <!--  <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>-->
-  <!--  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>-->
+<!--  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>-->
+<!--  <script src="https://unpkg.com/react-router@5.2.1/umd/react-router.min.js" crossorigin></script>-->
+<!--  <script src="https://unpkg.com/react-router-dom@5.2.1/umd/react-router-dom.min.js" crossorigin></script>-->
+<!--  <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>-->
+<!-- <script src="https://cdn.jsdelivr.net/npm/formik@2.2.9/dist/index.min.js"></script> -->
+<!--  -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+  crossorigin="anonymous"></script> -->
 
-  <script src="./js/react-dev.js"></script>
-  <script src="./js/react-dom-dev.js"></script>
 
-  <script src="https://unpkg.com/react-router@5.2.1/umd/react-router.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-router-dom@5.2.1/umd/react-router-dom.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/formik@2.2.9/dist/index.min.js"></script> -->
-  <!--  -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-    crossorigin="anonymous"></script> -->
-  <!--  -->
+<!--  -->
 
-  <!-- load our react component. -->
-  <script src="context.js" defer type="text/babel"></script>
-  <script src="data.js" defer type="text/babel"></script>
-  <script src="navbar.js" defer type="text/babel"></script>
-  <script src="createaccount.js" defer type="text/babel"></script>
-  <script src="login.js" defer type="text/babel"></script>
-  <script src="deposit.js" defer type="text/babel"></script>
-  <script src="withdraw.js" defer type="text/babel"></script>
-  <script src="balance.js" defer type="text/babel"></script>
-  <script src="alldata.js" defer type="text/babel"></script>
-  <script src="home.js" defer type="text/babel"></script>
-  <script src="index.js" defer type="text/babel"></script>
+<!-- load our react component. -->
+<script src="context.js" defer type="text/babel"></script>
+<script src="data.js" defer type="text/babel"></script>
+<script src="navbar.js" defer type="text/babel"></script>
+<script src="createaccount.js" defer type="text/babel"></script>
+<script src="login.js" defer type="text/babel"></script>
+<script src="deposit.js" defer type="text/babel"></script>
+<script src="withdraw.js" defer type="text/babel"></script>
+<script src="balance.js" defer type="text/babel"></script>
+<script src="alldata.js" defer type="text/babel"></script>
+<script src="home.js" defer type="text/babel"></script>
+<script src="index.js" defer type="text/babel"></script>
 
 </body>
 

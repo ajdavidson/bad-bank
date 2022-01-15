@@ -44,17 +44,52 @@ function Withdraw() {
     console.log(userID);
 
     const newBalance = Number(ctx.users[userID].balance) - Number(Math.trunc(withdrawAmt));
-    var dtm = new Date();
+    //var dtm = new Date();
 
     if (withdrawAmt > ctx.users[userID].balance) {
       setStatus('Amount exceeds balance');
       setTimeout(() => setStatus(''), 3000);
       return false;
     }
+
+    //
+    var d = new Date();
+
+    var hours = d.getUTCHours();
+    var min = d.getUTCMinutes(); //
+    var sec = d.getUTCSeconds();
+
+
+    var date = d.getUTCDate();
+    var month = d.getUTCMonth() + 1; // Since getUTCMonth() returns month from 0-11 not 1-12
+    var year = d.getUTCFullYear();
+
+    var dateStr = month + "/" + date + "/" + year;
+    //console.log(dateStr)
+    var timeStr = hours + ":" + min + ":" + sec;
+    //console.log(timeStr)
+
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    var day = days[d.getDay()];
+    //console.log(day)
+    var strDay = day.substring(0, 3);
+    //console.log(strDay)
+
+
+    var month = months[d.getMonth()];
+    //console.log(month)
+
+    const setXDate = strDay + ', ' + dateStr + ' ' + timeStr;
+    console.log('Withdrawal Timestamp: ',setXDate)
+
+    //
+
     ctx.xaction.push({
       userID: ctx.loggedIn[0].email,
       type: 'Withdrawal',
-      datetime: dtm.toUTCString(),
+      datetime: setXDate,
       amount: Number(Math.trunc(withdrawAmt)),
       balance: newBalance
     });
