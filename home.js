@@ -15,7 +15,8 @@ function Home() {
   //
   // console.log('From Local Storage', {storedCTX});
   // console.log('Last Log In ', storedCTX.loggedIn[0].name)
-
+  console.log('Logged In...')
+  console.table(ctx.loggedIn)
   return (
     <React.Fragment>
       <Container>
