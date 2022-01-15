@@ -109,15 +109,14 @@ function Withdraw() {
               <Card.Header style={{borderRadius: '5px 45px 5px 45px',textAlign:'center'}}><i className="fas fa-balance-scale-right"/> <b>Withdraw</b></Card.Header>
               <Card.Body>
                 <Card.Title>
-                  &nbsp;
-                  {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
-
+                  <h5><i className="fas fa-balance-scale"/> Balance:
+                    ${JSON.stringify(ctx.loggedIn[0].balance)}</h5>
                 </Card.Title>
                 <Card.Subtitle><br/>
-                  <h5><i className="fas fa-balance-scale"/> Balance:
-                    ${JSON.stringify(ctx.loggedIn[0].balance)}
-                  </h5>
+                  &nbsp;
+                  {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
                 </Card.Subtitle>
+                <Card.Text style={{textAlign: 'center'}}>
                 {show ? (
                   <>
                     <br/>
@@ -150,6 +149,7 @@ function Withdraw() {
                       Withdrawal</Button>
                   </>
                 )}
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>

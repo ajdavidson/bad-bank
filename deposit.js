@@ -71,8 +71,8 @@ function Deposit() {
     //console.log(month)
 
     //const setXDate = strDay + ', ' + dateStr + ' ' + timeStr;
-    const setXDate = strDay + ', ' + d.toLocaleString('en-US', { timeZone: 'UTC' })
-    console.log('Deposit Timestamp: ',setXDate)
+    const setXDate = strDay + ', ' + d.toLocaleString('en-US', {timeZone: 'UTC'})
+    console.log('Deposit Timestamp: ', setXDate)
 
     // console.log(d.toLocaleString('en-US', { timeZone: 'UTC' }));
     // console.log(strDay,',', d.toLocaleString('en-US', { timeZone: 'UTC' }));
@@ -99,50 +99,55 @@ function Deposit() {
 
   return (
     <React.Fragment>
-      <Container fluid={'lg'} >
+      <Container fluid={'lg'}>
         <Row sm={12} md={12} lg={4}>
           <Col sm={12} md={12} lg={4}>
-            <Card style={{width: '100%',borderRadius: '5px 45px 45px 5px'}}>
-              <Card.Header style={{borderRadius: '5px 45px 5px 45px',textAlign:'center'}}><i className="fas fa-balance-scale-left" /> <b>Deposit</b></Card.Header>
+            <Card style={{width: '100%', borderRadius: '5px 45px 45px 5px'}}>
+              <Card.Header style={{borderRadius: '5px 45px 5px 45px', textAlign: 'center'}}><i
+                className="fas fa-balance-scale-left"/> <b>Deposit</b></Card.Header>
               <Card.Body>
                 <Card.Title>
-                  &nbsp;
-                  {status !== '' && <i className="fas fa-exclamation-triangle" style={{ color: 'red' }} />} {status}
+                  <h5><i className="fas fa-balance-scale"/> Balance:
+                    ${JSON.stringify(ctx.loggedIn[0].balance)}</h5>
                 </Card.Title>
-                <Card.Subtitle><br /><h5><i className="fas fa-balance-scale" /> Balance:
-                  ${JSON.stringify(ctx.loggedIn[0].balance)}
-                </h5></Card.Subtitle>
-                {show ? (
-                  <>
-                    <br />
-                    {/* <input type="input" className="form-control" id="depositAmt" placeholder="Enter deposit amount" value={depositAmt} onChange={e => setDepositAmt(e.currentTarget.value)} /><br /> */}
-                    <InputGroup className="mb-3">
-                      <InputGroup.Text>$</InputGroup.Text>
-                      <FormControl aria-label="Amount (to the nearest dollar)" id="depositAmt"
-                        placeholder="Enter a number greater than zero"
-                        onChange={e => setDepositAmt(e.currentTarget.value)} />
-                      <InputGroup.Text>.00</InputGroup.Text>
-                    </InputGroup>
-                    {/* Email address<br />
+                <Card.Subtitle><br/>
+                  &nbsp;
+                  {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
+                </Card.Subtitle>
+                <Card.Text style={{textAlign: 'center'}}>
+                  {show ? (
+                    <>
+                      <br/>
+                      {/* <input type="input" className="form-control" id="depositAmt" placeholder="Enter deposit amount" value={depositAmt} onChange={e => setDepositAmt(e.currentTarget.value)} /><br /> */}
+                      <InputGroup className="mb-3">
+                        <InputGroup.Text>$</InputGroup.Text>
+                        <FormControl aria-label="Amount (to the nearest dollar)" id="depositAmt"
+                                     placeholder="Enter a number greater than zero"
+                                     onChange={e => setDepositAmt(e.currentTarget.value)}/>
+                        <InputGroup.Text>.00</InputGroup.Text>
+                      </InputGroup>
+                      {/* Email address<br />
               <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br />
               Password<br />
               <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
 
-                    {depositAmt !== 0 && depositAmt !== '' ? (
-                      // <button type="submit" className="btn btn-light" onClick={handleCreate}>Submit Deposit</button>
-                      <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Submit Deposit</Button>
-                    ) : (
-                      // <button type="submit" className="btn btn-warning" disabled>Fill in Amount</button>
-                      <Button type="submit" variant="light" disabled>Fill in Amount</Button>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <h5><i className="fas fa-check-circle" style={{ color: 'green' }} /> Success</h5>
-                    {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Deposit</button> */}
-                    <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another Deposit</Button>
-                  </>
-                )}
+                      {depositAmt !== 0 && depositAmt !== '' ? (
+                        // <button type="submit" className="btn btn-light" onClick={handleCreate}>Submit Deposit</button>
+                        <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Submit Deposit</Button>
+                      ) : (
+                        // <button type="submit" className="btn btn-warning" disabled>Fill in Amount</button>
+                        <Button type="submit" variant="light" disabled>Fill in Amount</Button>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <h5><i className="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
+                      {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Deposit</button> */}
+                      <Button type="submit" variant="outline-secondary" onClick={clearForm}>Make another
+                        Deposit</Button>
+                    </>
+                  )}
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
