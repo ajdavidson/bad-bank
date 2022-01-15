@@ -102,8 +102,8 @@ function Deposit() {
       <Container fluid={'lg'} >
         <Row sm={12} md={12} lg={4}>
           <Col sm={12} md={12} lg={4}>
-            <Card style={{width: '100%'}}>
-              <Card.Header><i className="fas fa-balance-scale-left" /> <b>Deposit</b></Card.Header>
+            <Card style={{width: '100%',borderRadius: '5px 45px 45px 5px'}}>
+              <Card.Header style={{borderRadius: '5px 45px 5px 45px',textAlign:'center'}}><i className="fas fa-balance-scale-left" /> <b>Deposit</b></Card.Header>
               <Card.Body>
                 <Card.Title>
                   &nbsp;

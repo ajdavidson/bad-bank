@@ -18,7 +18,7 @@ function CreateAccount() {
   }
 
   function handleCreate() {
-    console.log(name, email, password);
+    //console.log(name, email, password);
     if (!validate(name, 'Enter a name')) return;
 
     if (!validate(email, 'Enter an email')) return;
@@ -46,15 +46,15 @@ function CreateAccount() {
     setShow(false);
   }
 
-  function logInNow() {
-    const resPwd = ctx.users.filter(p => p.password == password);
-    console.log(resPwd);
-    ctx.loggedIn = resPwd;
-    localStorage.setItem("ctx_data", JSON.stringify(ctx));
-    //alert('Logged in as: ' + ctx.loggedIn[0].name);
-    clearForm();
-    window.location.reload(true);
-  }
+  // function logInNow() {
+  //   const resPwd = ctx.users.filter(p => p.password == password);
+  //   console.log(resPwd);
+  //   ctx.loggedIn = resPwd;
+  //   localStorage.setItem("ctx_data", JSON.stringify(ctx));
+  //   //alert('Logged in as: ' + ctx.loggedIn[0].name);
+  //   clearForm();
+  //   window.location.reload(true);
+  // }
 
   function clearForm() {
     setName('');
@@ -74,8 +74,8 @@ function CreateAccount() {
       <Container fluid={'lg'} >
         <Row sm={12} md={12} lg={4}>
           <Col sm={12} md={12} lg={4}>
-            <Card style={{width: '100%'}}>
-              <Card.Header><i className="fas fa-id-card"/> <b>Create Account</b></Card.Header>
+            <Card style={{width: '100%',borderRadius: '5px 45px 45px 5px'}}>
+              <Card.Header style={{borderRadius: '5px 45px 5px 45px',textAlign:'center'}}><i className="fas fa-id-card"/> <b>Create Account</b></Card.Header>
               <Card.Body>
                 <Card.Title>
                   &nbsp;
