@@ -71,11 +71,12 @@ function CreateAccount() {
 
   return (
     <React.Fragment>
-      <Container fluid={'lg'} >
+      <Container fluid={'lg'}>
         <Row sm={12} md={12} lg={4}>
           <Col sm={12} md={12} lg={4}>
-            <Card style={{width: '100%',borderRadius: '5px 45px 45px 5px'}}>
-              <Card.Header style={{borderRadius: '5px 45px 5px 45px',textAlign:'center'}}><i className="fas fa-id-card"/> <b>Create Account</b></Card.Header>
+            <Card style={{width: '100%', borderRadius: '5px 45px 45px 5px'}}>
+              <Card.Header style={{borderRadius: '5px 45px 5px 45px', textAlign: 'center'}}><i
+                className="fas fa-id-card"/> <b>Create Account</b></Card.Header>
               <Card.Body>
                 <Card.Title>
                   &nbsp;
@@ -86,69 +87,72 @@ function CreateAccount() {
                     {show ? (
                       <>
                         <Form style={{textAlign: 'center'}}>
-                        {/*  */}
-                        Name<br/>
-                        {/* <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br /> */}
-                        <InputGroup className="mb-3">
-                          <InputGroup.Text id="basic-addon1"><i className="fas fa-user"/></InputGroup.Text>
-                          <FormControl
-                            type="input" className="form-control" id="name" placeholder="Enter your name" value={name}
-                            onChange={e => setName(e.currentTarget.value)}
-                            autoComplete="current-password"
-                          />
-                        </InputGroup>
-                        {/*  */}
-                        Email address<br/>
-                        {/* <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br /> */}
-                        <InputGroup className="mb-3">
-                          <InputGroup.Text id="basic-addon1"><i className="fas fa-envelope"/></InputGroup.Text>
-                          <FormControl
-                            type="input" className="form-control" id="email" placeholder="Enter your email"
-                            value={email}
-                            onChange={e => setEmail(e.currentTarget.value)}
-                            autoComplete="current-password"
-                          />
-                        </InputGroup>
-                        {/*  */}
-                        Password<br/>
-                        {/* <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
-                        <InputGroup className="mb-3">
-                          <InputGroup.Text id="basic-addon1"><i className="fas fa-key"/></InputGroup.Text>
-                          <FormControl
-                            type={passwordShown ? "text" : "password"}
-                            id="password" placeholder="Enter a password" value={password}
-                            onChange={e => setPassword(e.currentTarget.value)}
-                            autoComplete="current-password"
-                          />
-                          <InputGroup.Text onClick={togglePassword} style={{width: '45px', cursor: 'pointer'}}>
-                            {passwordShown ? (
+                          {/*  */}
+                          <Form.Label htmlFor="inputName">Name</Form.Label>
+                          {/* <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br /> */}
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic-addon1"><i className="fas fa-user"/></InputGroup.Text>
+                            <FormControl
+                              type="input" className="form-control" id="name" placeholder="Enter your name" value={name}
+                              onChange={e => setName(e.currentTarget.value)}
+                              autoComplete="current-password"
+                            />
+                          </InputGroup>
+                          {/*  */}
+                          <Form.Label htmlFor="inputEmail">Email</Form.Label>
+                          {/* <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br /> */}
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic-addon1"><i className="fas fa-envelope"/></InputGroup.Text>
+                            <FormControl
+                              type="input" className="form-control" id="email" placeholder="Enter your email"
+                              value={email}
+                              onChange={e => setEmail(e.currentTarget.value)}
+                              autoComplete="current-password"
+                            />
+                          </InputGroup>
+                          {/*  */}
+                          <Form.Label htmlFor="inputPWD">Password</Form.Label>
+                          {/* <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic-addon1"><i className="fas fa-key"/></InputGroup.Text>
+                            <FormControl
+                              type={passwordShown ? "text" : "password"}
+                              id="password" placeholder="Enter a password" value={password}
+                              onChange={e => setPassword(e.currentTarget.value)}
+                              autoComplete="current-password"
+                            />
+                            <InputGroup.Text onClick={togglePassword} style={{width: '45px', cursor: 'pointer'}}>
+                              {passwordShown ? (
 
-                              <span><i className="fas fa-eye-slash"/></span>
+                                <span><i className="fas fa-eye-slash"/></span>
 
-                            ) : (
+                              ) : (
 
-                              <span><i className="fas fa-eye"/></span>
+                                <span><i className="fas fa-eye"/></span>
 
-                            )}
-                          </InputGroup.Text>
-                        </InputGroup>
+                              )}
+                            </InputGroup.Text>
+                          </InputGroup>
 
-                        {name !== '' || email !== '' || password !== '' ? (
-                          // <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
-                          <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Create
-                            Account</Button>
-                        ) : (
-                          <Button type="submit" variant="light" disabled>Fill in Form Info</Button>
-                        )}
+                          {name !== '' || email !== '' || password !== '' ? (
+                            // <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+                            <Button type="submit" variant="outline-secondary" onClick={handleCreate}>Create
+                              Account</Button>
+                          ) : (
+                            <Button type="submit" variant="light" disabled>Fill in Form Info</Button>
+                          )}
                         </Form></>
                     ) : (
                       <>
-                        <h5><i className="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
-                        {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
-                        <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another
-                          account</Button>{'  '}
-                        {/*<Button type="submit" variant="outline-secondary" onClick={logInNow}>Log in?</Button>*/}
-                      </>
+                        <Form style={{textAlign: 'center'}}>
+                          <Form.Text htmlFor="inputEmail">
+                            <h5><i className="fas fa-check-circle"
+                                   style={{color: 'green'}}/> Success</h5></Form.Text>
+                          {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
+                          <Button type="submit" variant="outline-secondary" onClick={clearForm}>Add another
+                            account</Button>{'  '}
+                          {/*<Button type="submit" variant="outline-secondary" onClick={logInNow}>Log in?</Button>*/}
+                        </Form></>
                     )}
                   </>
 

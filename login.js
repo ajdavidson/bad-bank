@@ -53,13 +53,14 @@ function Login() {
       return;
     }
 
-    handleShow()
+
     //ctx.users.push({ level: 'Standard User', name, email, password, balance: 100 });
     var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
     console.log('From Local Storage:Login', {storedCTX});
     //console.log('Log Out ', storedCTX.loggedIn[0].name)
     //console.log('Last Log In ', resEmail[0].name)
     ctx.loggedIn = resPwd
+    handleShow()
     localStorage.setItem("ctx_data", JSON.stringify(ctx));
     setTimeout(() => window.location.reload(true), 3000);
     //window.location.reload(true);
@@ -88,7 +89,7 @@ function Login() {
           <Col sm={12} md={12} lg={4}>
             <Card style={{width: '100%',borderRadius: '5px 45px 45px 5px'}}>
               <Card.Header style={{borderRadius: '5px 45px 5px 45px',textAlign:'center'}}><i className="fas fa-user"/> <b>Log In</b></Card.Header>
-              <Card.Body>
+              <Card.Body style={{textAlign:'center'}}>
                 <Card.Title>
                   &nbsp;
                   {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
@@ -97,7 +98,8 @@ function Login() {
                   <>
                     <Form>
                     {/*  */}
-                    Email address<br/>
+                      <Form.Label htmlFor="inputEmail">Email</Form.Label>
+                    {/*Email address<br/>*/}
                     {/* <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br /> */}
                     <InputGroup className="mb-3">
                       <InputGroup.Text id="basic-addon1"><i className="fas fa-envelope"/></InputGroup.Text>
@@ -108,7 +110,7 @@ function Login() {
                       />
                     </InputGroup>
                     {/*  */}
-                    Password<br/>
+                      <Form.Label htmlFor="inputPassword5">Password</Form.Label>
                     {/* <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br /> */}
                     <InputGroup className="mb-3">
                       <InputGroup.Text id="basic-addon1"><i className="fas fa-key"/></InputGroup.Text>
