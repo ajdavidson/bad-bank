@@ -23,7 +23,8 @@ function Login() {
 
   function handleCreate() {
     console.log(email, password);
-    handleShow()
+
+    //handleShow()
     //
     const resEmail = ctx.users.filter(p => p.email == email)
     console.log(resEmail)
@@ -43,7 +44,7 @@ function Login() {
       //alert("Value does not exists!")
       setStatus("No Email Match");
       setTimeout(() => setStatus(''), 3000);
-      return false;
+      return;
     }
     if (resPwd.length === 0) {
       //alert("Value does not exists!")
@@ -51,6 +52,8 @@ function Login() {
       setTimeout(() => setStatus(''), 3000);
       return;
     }
+
+    handleShow()
     //ctx.users.push({ level: 'Standard User', name, email, password, balance: 100 });
     var storedCTX = JSON.parse(localStorage.getItem("ctx_data"));
     console.log('From Local Storage:Login', {storedCTX});
