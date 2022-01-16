@@ -116,7 +116,7 @@ function Withdraw() {
                   &nbsp;
                   {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
                 </Card.Subtitle>
-                <Card.Text style={{textAlign: 'center'}}>
+
                 {show ? (
                   <>
                     <br/>
@@ -149,7 +149,7 @@ function Withdraw() {
                       Withdrawal</Button>
                   </>
                 )}
-                </Card.Text>
+
               </Card.Body>
             </Card>
           </Col>

@@ -114,7 +114,7 @@ function Deposit() {
                   &nbsp;
                   {status !== '' && <i className="fas fa-exclamation-triangle" style={{color: 'red'}}/>} {status}
                 </Card.Subtitle>
-                <Card.Text style={{textAlign: 'center'}}>
+
                   {show ? (
                     <>
                       <br/>
@@ -147,7 +147,7 @@ function Deposit() {
                         Deposit</Button>
                     </>
                   )}
-                </Card.Text>
+                
               </Card.Body>
             </Card>
           </Col>
