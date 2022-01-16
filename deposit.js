@@ -117,7 +117,9 @@ function Deposit() {
 
                   {show ? (
                     <>
+                    <Form style={{textAlign: 'center'}}>
                       <br/>
+                      <Form.Label>Amount</Form.Label>
                       {/* <input type="input" className="form-control" id="depositAmt" placeholder="Enter deposit amount" value={depositAmt} onChange={e => setDepositAmt(e.currentTarget.value)} /><br /> */}
                       <InputGroup className="mb-3">
                         <InputGroup.Text>$</InputGroup.Text>
@@ -138,7 +140,7 @@ function Deposit() {
                         // <button type="submit" className="btn btn-warning" disabled>Fill in Amount</button>
                         <Button type="submit" variant="light" disabled>Fill in Amount</Button>
                       )}
-                    </>
+                    </Form></>
                   ) : (
                     <>
                       <h5><i className="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
@@ -147,7 +149,7 @@ function Deposit() {
                         Deposit</Button>
                     </>
                   )}
-                
+
               </Card.Body>
             </Card>
           </Col>

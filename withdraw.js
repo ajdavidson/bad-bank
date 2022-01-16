@@ -119,7 +119,9 @@ function Withdraw() {
 
                 {show ? (
                   <>
+                  <Form style={{textAlign: 'center'}}>
                     <br/>
+                    <Form.Label>Amount</Form.Label>
                     {/* <input type="input" className="form-control" id="withdrawAmt" placeholder="Enter deposit amount" value={withdrawAmt} onChange={e => setWithdrawAmt(e.currentTarget.value)} /><br /> */}
                     <InputGroup className="mb-3">
                       <InputGroup.Text>$</InputGroup.Text>
@@ -140,7 +142,7 @@ function Withdraw() {
                     ) : (
                       <Button type="submit" variant="light" disabled>Fill in Amount</Button>
                     )}
-                  </>
+                  </Form></>
                 ) : (
                   <>
                     <h5><i className="fas fa-check-circle" style={{color: 'green'}}/> Success</h5>
