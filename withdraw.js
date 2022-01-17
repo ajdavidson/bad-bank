@@ -119,7 +119,7 @@ function Withdraw() {
 
                 {show ? (
                   <>
-                  <Form style={{textAlign: 'center'}}>
+                  <Form style={{textAlign: 'center'}} onSubmit={e => e.preventDefault()}>
                     <br/>
                     <Form.Label>Amount</Form.Label>
                     {/* <input type="input" className="form-control" id="withdrawAmt" placeholder="Enter deposit amount" value={withdrawAmt} onChange={e => setWithdrawAmt(e.currentTarget.value)} /><br /> */}

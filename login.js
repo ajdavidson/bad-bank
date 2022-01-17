@@ -96,7 +96,7 @@ function Login() {
                 </Card.Title>
                 {show ? (
                   <>
-                    <Form>
+                    <Form style={{textAlign: 'center'}} onSubmit={e => e.preventDefault()}>
                     {/*  */}
                       <Form.Label htmlFor="inputEmail">Email</Form.Label>
                     {/*Email address<br/>*/}

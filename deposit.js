@@ -117,7 +117,7 @@ function Deposit() {
 
                   {show ? (
                     <>
-                    <Form style={{textAlign: 'center'}}>
+                    <Form style={{textAlign: 'center'}} onSubmit={e => e.preventDefault()}>
                       <br/>
                       <Form.Label>Amount</Form.Label>
                       {/* <input type="input" className="form-control" id="depositAmt" placeholder="Enter deposit amount" value={depositAmt} onChange={e => setDepositAmt(e.currentTarget.value)} /><br /> */}

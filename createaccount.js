@@ -1,6 +1,7 @@
 function CreateAccount() {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState('');
+  const [level, setLevel] = React.useState('');
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -19,6 +20,13 @@ function CreateAccount() {
 
   function handleCreate() {
     //console.log(name, email, password);
+    console.log(level)
+
+// if(!level) {
+//   setStatus("Choose a User Level");
+//   return;
+// }
+    if (!validate(level, 'Choose a User Level')) return;
     if (!validate(name, 'Enter a name')) return;
 
     if (!validate(email, 'Enter an email')) return;
@@ -39,9 +47,9 @@ function CreateAccount() {
     }
 
     let acct = '9900' + (Math.floor(Math.random() * 90000) + 10000);
-    console.log(acct)
+    console.log('New Account ',acct,' created' )
 
-    ctx.users.push({acctNum: acct, level: 'Individual', name, email, password, balance: 100});
+    ctx.users.push({acctNum: acct, level: level, name, email, password, balance: 100});
     localStorage.setItem("ctx_data", JSON.stringify(ctx));
     setShow(false);
   }
@@ -60,6 +68,7 @@ function CreateAccount() {
     setName('');
     setEmail('');
     setPassword('');
+    setLevel('');
     setShow(true);
   }
 
@@ -68,6 +77,12 @@ function CreateAccount() {
     // inverse the boolean state of passwordShown
     setPasswordShown(!passwordShown);
   };
+
+  // function getSelectedValue(event) {
+  //   console.log("Value: " + event.target.value + "; Display: " + event.target[event.target.selectedIndex].text + ".");
+  //   setLevel(event.target[event.target.selectedIndex].text);
+  //   console.log(level);
+  // }
 
   return (
     <React.Fragment>
@@ -86,7 +101,23 @@ function CreateAccount() {
                   <>
                     {show ? (
                       <>
-                        <Form style={{textAlign: 'center'}}>
+                        <Form style={{textAlign: 'center'}} onSubmit={e => e.preventDefault()}>
+
+                          <Form.Label htmlFor="inputName">User Type</Form.Label>
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic-addon1"><i className="fas fa-shield-alt"/></InputGroup.Text>
+                            <Form.Select
+                              aria-label="Default select example"
+                              // onChange={event => setLevel(event.target[event.target.selectedIndex].text)}
+                              onChange={e => setLevel(e.currentTarget.value)}
+                            >
+                              <option value={""}>Select Level</option>
+                              <option value="Individual">Individual</option>
+                              <option value="Manager">Manager</option>
+                              <option value="Administrator">Administrator</option>
+                            </Form.Select>
+                          </InputGroup>
+
                           {/*  */}
                           <Form.Label htmlFor="inputName">Name</Form.Label>
                           {/* <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br /> */}
@@ -95,7 +126,7 @@ function CreateAccount() {
                             <FormControl
                               type="input" className="form-control" id="name" placeholder="Enter your name" value={name}
                               onChange={e => setName(e.currentTarget.value)}
-                              autoComplete="current-password"
+
                             />
                           </InputGroup>
                           {/*  */}
@@ -107,7 +138,7 @@ function CreateAccount() {
                               type="input" className="form-control" id="email" placeholder="Enter your email"
                               value={email}
                               onChange={e => setEmail(e.currentTarget.value)}
-                              autoComplete="current-password"
+
                             />
                           </InputGroup>
                           {/*  */}
@@ -119,7 +150,7 @@ function CreateAccount() {
                               type={passwordShown ? "text" : "password"}
                               id="password" placeholder="Enter a password" value={password}
                               onChange={e => setPassword(e.currentTarget.value)}
-                              autoComplete="current-password"
+
                             />
                             <InputGroup.Text onClick={togglePassword} style={{width: '45px', cursor: 'pointer'}}>
                               {passwordShown ? (
@@ -144,7 +175,7 @@ function CreateAccount() {
                         </Form></>
                     ) : (
                       <>
-                        <Form style={{textAlign: 'center'}}>
+                        <Form style={{textAlign: 'center'}} onSubmit={e => e.preventDefault()}>
                           <Form.Text htmlFor="inputEmail">
                             <h5><i className="fas fa-check-circle"
                                    style={{color: 'green'}}/> Success</h5></Form.Text>
