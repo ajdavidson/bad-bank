@@ -19,11 +19,11 @@ function Withdraw() {
       setTimeout(() => setStatus(''), 3000);
       return false;
     }
-    if (field > ctx.users[0].balance) {
-      setStatus('Amount exceeds balance');
-      setTimeout(() => setStatus(''), 3000);
-      return false;
-    }
+    // if (field > ctx.users[0].balance) {
+    //   setStatus('Amount exceeds balance');
+    //   setTimeout(() => setStatus(''), 3000);
+    //   return false;
+    // }
     return true;
   }
 
@@ -43,8 +43,14 @@ function Withdraw() {
     const userID = find(ctx.users)
     console.log(userID);
 
-    const newBalance = Number(ctx.users[userID].balance) - Number(Math.trunc(withdrawAmt));
 
+    if (withdrawAmt > ctx.users[userID].balance) {
+      setStatus('Amount exceeds balance');
+      setTimeout(() => setStatus(''), 3000);
+      return false;
+    }
+
+    const newBalance = Number(ctx.users[userID].balance) - Number(Math.trunc(withdrawAmt));
     //
     var d = new Date();
 
@@ -81,6 +87,8 @@ function Withdraw() {
     // console.log(d.toLocaleString('en-US', { timeZone: 'UTC' }));
     // console.log(strDay,',', d.toLocaleString('en-US', { timeZone: 'UTC' }));
     //
+
+
 
     ctx.xaction.push({
       userID: ctx.loggedIn[0].email,
