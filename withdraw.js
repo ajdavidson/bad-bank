@@ -19,11 +19,11 @@ function Withdraw() {
       setTimeout(() => setStatus(''), 3000);
       return false;
     }
-    // if (field > ctx.users[0].balance) {
-    //   setStatus('Amount exceeds balance');
-    //   setTimeout(() => setStatus(''), 3000);
-    //   return false;
-    // }
+    if (field > ctx.users[0].balance) {
+      setStatus('Amount exceeds balance');
+      setTimeout(() => setStatus(''), 3000);
+      return false;
+    }
     return true;
   }
 
